@@ -290,7 +290,7 @@ fieldset {
   font-weight: 700;
   font-size: 30px;
   line-height: 1;
-  color: var(--teal-900);
+  color: var(--navy-900);
   text-decoration: none;
   transition: color 0.15s;
 }
