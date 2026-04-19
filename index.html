@@ -386,15 +386,45 @@
     </div>
   </footer>
 
+  <!-- ===================== MOBILE NAV OVERLAY ===================== -->
+  <div class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="mobile-nav-close" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="21" y1="3" x2="3" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="mobile-nav-body">
+      <nav class="mobile-nav-links" aria-label="Main navigation">
+        <a href="#" class="mobile-nav-link">Our services</a>
+        <a href="#" class="mobile-nav-link">Shop our store</a>
+        <a href="#" class="mobile-nav-link">Work with us</a>
+        <a href="#" class="mobile-nav-link">Who we are</a>
+      </nav>
+      <div class="mobile-nav-actions">
+        <a href="#" class="mobile-btn mobile-btn-contact">Contact us</a>
+        <a href="#" class="mobile-btn mobile-btn-donate">Donate</a>
+      </div>
+    </div>
+    <div class="mobile-nav-socials">
+      <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+      <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+      <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+      <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+      <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="30" height="30"></a>
+    </div>
+  </div>
+
   <script>
     /* Mobile hamburger menu */
     (function () {
       var menuBtn  = document.querySelector('.mobile-menu-btn');
-      var navStack = document.querySelector('.nav-stack');
-      if (!menuBtn || !navStack) return;
+      var overlay  = document.querySelector('.mobile-nav-overlay');
+      var closeBtn = document.querySelector('.mobile-nav-close');
+      if (!menuBtn || !overlay) return;
 
       function closeMenu() {
-        navStack.classList.remove('is-open');
+        overlay.classList.remove('is-open');
         menuBtn.classList.remove('is-open');
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.setAttribute('aria-label', 'Open navigation menu');
@@ -402,15 +432,21 @@
       }
 
       menuBtn.addEventListener('click', function () {
-        var isOpen = navStack.classList.toggle('is-open');
+        var isOpen = overlay.classList.toggle('is-open');
         menuBtn.classList.toggle('is-open', isOpen);
         menuBtn.setAttribute('aria-expanded', String(isOpen));
         menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (isOpen && closeBtn) closeBtn.focus();
+      });
+
+      closeBtn.addEventListener('click', function () {
+        closeMenu();
+        menuBtn.focus();
       });
 
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && navStack.classList.contains('is-open')) {
+        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
           closeMenu();
           menuBtn.focus();
         }

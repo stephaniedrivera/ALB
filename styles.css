@@ -1002,6 +1002,155 @@ fieldset {
 .mobile-menu-btn.is-open .icon-close    { display: block; }
 
 /* ============================================================
+   MOBILE NAV OVERLAY
+   ============================================================ */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: var(--navy-700);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  flex-direction: column;
+  gap: 104px;
+  align-items: flex-end;
+  overflow-y: auto;
+}
+
+.mobile-nav-overlay.is-open {
+  display: flex;
+}
+
+/* Close × button — top-right */
+.mobile-nav-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white);
+  opacity: 0.9;
+  padding: 40px 32px;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.mobile-nav-close:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Nav body: links + action buttons */
+.mobile-nav-body {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  padding: 0 32px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Nav links list */
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  padding: 8px 16px;
+  width: 100%;
+  color: var(--white);
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.mobile-nav-link:hover {
+  opacity: 0.85;
+}
+
+.mobile-nav-link:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Contact + Donate buttons */
+.mobile-nav-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 32px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mobile-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 160px;
+  padding: 16px 32px;
+  border-radius: 32px;
+  border-width: 3px;
+  border-style: solid;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mobile-btn-contact {
+  background-color: var(--navy-100);
+  border-color: var(--navy-300);
+  color: var(--navy-900);
+}
+
+.mobile-btn-donate {
+  background-color: var(--red-700);
+  border-color: var(--red-300);
+  color: var(--white);
+}
+
+/* Social icon row — anchored to the bottom */
+.mobile-nav-socials {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.mobile-nav-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.mobile-nav-socials a:hover {
+  opacity: 0.8;
+}
+
+.mobile-nav-socials a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer {
