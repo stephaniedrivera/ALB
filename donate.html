@@ -34,7 +34,7 @@
         </nav>
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
           <div class="nav-item has-dropdown">
-            <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Our services</button>
+            <button href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Our services</a>
             <div class="nav-dropdown" role="menu" aria-label="Our services">
               <a href="#" class="dropdown-item" role="menuitem">Career coaching and support</a>
               <a href="#" class="dropdown-item" role="menuitem">Technology for everyday life</a>
@@ -96,10 +96,10 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="section-impact" aria-label="Donation impact" aria-hidden="">
+    <section class="section-impact" aria-label="Donation impact" aria-hidden="true">
       <div class="impact-copy">
         <div class="impact-copy-inner">
-          <p class="eyebrow">YOUR IMPACT</p>
+          <p class="eyebrow" aria-hidden="true">YOUR IMPACT</p>
           <h2>Every donation, partnership and purchase helps us create <span class="gold">jobs</span>, <span class="gold">access</span> &amp; <span class="gold">opportunity</span>.</h2>
         </div>
       </div>
@@ -132,7 +132,7 @@
             <div class="step-info" id="amount-info" aria-live="polite">
               With a $25 donation, you will help supply training materials for individuals learning new skills.
             </div>
-          </fieldset>
+          </div>
         </div>
 
         <!-- ── STEP 2: DONATION TYPE ── -->
@@ -346,46 +346,100 @@
 
   <!-- ===================== MOBILE NAV OVERLAY ===================== -->
   <div class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
-    <button class="mobile-nav-close" aria-label="Close navigation menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        <line x1="21" y1="3" x2="3" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-      </svg>
-    </button>
-    <div class="mobile-nav-body">
-      <nav class="mobile-nav-links" aria-label="Main navigation">
-        <a href="#" class="mobile-nav-link">Our services</a>
-        <a href="#" class="mobile-nav-link">Shop our store</a>
-        <a href="#" class="mobile-nav-link">Work with us</a>
-        <a href="#" class="mobile-nav-link">Who we are</a>
-      </nav>
-      <div class="mobile-nav-actions">
-        <a href="#" class="mobile-btn mobile-btn-contact">Contact us</a>
-        <a href="donate.html" class="mobile-btn mobile-btn-donate">Donate</a>
-      </div>
-    </div>
-    <div class="mobile-nav-socials">
-      <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+    <div class="mobile-nav-track">
+
+      <!-- ── Panel 1: Main menu ── -->
+      <div class="mobile-nav-panel" id="mobile-panel-main">
+        <button class="mobile-nav-close" aria-label="Close navigation menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="21" y1="3" x2="3" y2="21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="mobile-nav-body">
+          <nav class="mobile-nav-links" aria-label="Main navigation">
+            <button type="button" class="mobile-nav-link mobile-nav-services-btn" aria-expanded="false" aria-controls="mobile-panel-services">
+              Our services
+              <svg class="mobile-nav-chevron" width="10" height="16" viewBox="0 0 10 16" aria-hidden="true" focusable="false">
+                <polyline points="2,2 8,8 2,14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </button>
+            <a href="#" class="mobile-nav-link">Shop our store</a>
+            <a href="#" class="mobile-nav-link">Work with us</a>
+            <a href="#" class="mobile-nav-link">Who we are</a>
+          </nav>
+          <div class="mobile-nav-actions">
+            <a href="#" class="mobile-btn mobile-btn-contact">Contact us</a>
+            <a href="donate.html" class="mobile-btn mobile-btn-donate" aria-current="page">Donate</a>
+          </div>
+        </div>
+        <div class="mobile-nav-socials">
+          <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
           <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
           <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
           <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
           <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
-  </div>
+        </div>
+      </div>
+
+      <!-- ── Panel 2: Our services sub-menu ── -->
+      <div class="mobile-nav-panel" id="mobile-panel-services">
+        <button type="button" class="mobile-nav-back" aria-label="Back to main menu">
+          <svg width="21" height="20" viewBox="0 0 21 20" aria-hidden="true" focusable="false">
+            <line x1="19" y1="10" x2="2" y2="10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            <polyline points="9,2 2,10 9,18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          Back to main menu
+        </button>
+        <nav class="mobile-subnav-links" aria-label="Our services">
+          <a href="#" class="mobile-nav-link">Career coaching and support</a>
+          <a href="#" class="mobile-nav-link">Technology for everyday life</a>
+          <a href="#" class="mobile-nav-link">Independent living</a>
+          <a href="#" class="mobile-nav-link">Eye care and vision assessment</a>
+        </nav>
+        <div class="mobile-nav-socials">
+          <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
+        </div>
+      </div>
+
+    </div><!-- end .mobile-nav-track -->
+  </div><!-- end .mobile-nav-overlay -->
 
   <script>
-    /* Mobile hamburger menu */
+    /* Mobile nav — main menu + Our services sub-panel */
     (function () {
-      var menuBtn  = document.querySelector('.mobile-menu-btn');
-      var overlay  = document.querySelector('.mobile-nav-overlay');
-      var closeBtn = document.querySelector('.mobile-nav-close');
+      var menuBtn     = document.querySelector('.mobile-menu-btn');
+      var overlay     = document.querySelector('.mobile-nav-overlay');
+      var closeBtn    = document.querySelector('.mobile-nav-close');
+      var servicesBtn = document.querySelector('.mobile-nav-services-btn');
+      var backBtn     = document.querySelector('.mobile-nav-back');
       if (!menuBtn || !overlay) return;
 
       function closeMenu() {
-        overlay.classList.remove('is-open');
+        overlay.classList.remove('is-open', 'is-sub-open');
         menuBtn.classList.remove('is-open');
         menuBtn.setAttribute('aria-expanded', 'false');
         menuBtn.setAttribute('aria-label', 'Open navigation menu');
+        if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+      }
+
+      function openSubPanel() {
+        overlay.classList.add('is-sub-open');
+        if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'true');
+        if (backBtn) backBtn.focus();
+      }
+
+      function closeSubPanel() {
+        overlay.classList.remove('is-sub-open');
+        if (servicesBtn) {
+          servicesBtn.setAttribute('aria-expanded', 'false');
+          servicesBtn.focus();
+        }
       }
 
       menuBtn.addEventListener('click', function () {
@@ -397,15 +451,24 @@
         if (isOpen && closeBtn) closeBtn.focus();
       });
 
-      closeBtn.addEventListener('click', function () {
-        closeMenu();
-        menuBtn.focus();
-      });
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
           closeMenu();
           menuBtn.focus();
+        });
+      }
+
+      if (servicesBtn) servicesBtn.addEventListener('click', openSubPanel);
+      if (backBtn)     backBtn.addEventListener('click', closeSubPanel);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          if (overlay.classList.contains('is-sub-open')) {
+            closeSubPanel();
+          } else if (overlay.classList.contains('is-open')) {
+            closeMenu();
+            menuBtn.focus();
+          }
         }
       });
     })();
@@ -425,7 +488,6 @@
         item.addEventListener('focusout',   function (e) {
           if (!item.contains(e.relatedTarget)) close();
         });
-        /* Escape closes and returns focus to trigger */
         item.addEventListener('keydown', function (e) {
           if (e.key === 'Escape') { close(); trigger.focus(); }
         });
