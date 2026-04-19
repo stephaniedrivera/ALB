@@ -19,7 +19,7 @@
   --stone:    #635D59;
 
   /* Layout */
-  --content-max: 1440px;
+  --content-max: 1400px;
 }
 
 /* --- SKIP LINKS --- */
@@ -1331,9 +1331,9 @@ fieldset {
 }
 
 /* ============================================================
-   RESPONSIVE — TABLET (max-width: 1024px)
+   RESPONSIVE — TABLET (max-width: 1824px)
    ============================================================ */
-@media (max-width: 1024px) {
+@media (max-width: 1824px) {
 
   /* --- HEADER --- */
   .header-nav {
@@ -1616,7 +1616,7 @@ fieldset {
 
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 0;
+    gap: 16px;
   }
 
   .stat-item {
