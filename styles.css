@@ -1161,8 +1161,10 @@ fieldset {
 /* ============================================================
    RESPONSIVE — WIDE DESKTOP (min-width: 1441px)
    At viewports wider than the content-max, the hero goes
-   full-bleed (matching the nav pattern) and the decorative
-   visual right-anchors so text and photo never overlap.
+   full-bleed (matching the nav pattern). The text gets the
+   same max() left padding as the nav. The decorative visual
+   is centered using the same offset formula, so the text-to-
+   photo spacing is preserved exactly from the 1440px design.
    ============================================================ */
 @media (min-width: 1441px) {
   .section-hero {
@@ -1174,8 +1176,8 @@ fieldset {
   .hero-visual {
     inset: auto;
     top: 0;
-    right: 0;
     bottom: 0;
+    left: calc((100% - var(--content-max)) / 2);
     width: var(--content-max);
   }
 }
