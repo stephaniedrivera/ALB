@@ -49,7 +49,7 @@
       </div>
       <!-- Logo links to homepage -->
       <div class="header-logo">
-        <a href="/" aria-label="Austin Lighthouse for the Blind — home">
+        <a href="index.html" aria-label="Austin Lighthouse for the Blind — home">
           <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
         </a>
       </div>
@@ -96,7 +96,7 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="section-impact" aria-label="Donation impact">
+    <section class="section-impact" aria-label="Donation impact" aria-hidden="">
       <div class="impact-copy">
         <div class="impact-copy-inner">
           <p class="eyebrow">YOUR IMPACT</p>
@@ -116,8 +116,8 @@
           <div class="step-sidebar">
             <span class="step-number" aria-hidden="true">1</span>
           </div>
-          <div class="step-content">
-            <h3 class="step-title">Choose Your Amount</h3>
+          <fieldset class="step-content">
+            <legend class="step-title">Choose Your Amount</legend>
             <p class="step-subtitle">Select your donation amount.</p>
             <div class="amount-grid" role="group" aria-label="Preset donation amounts">
               <button type="button" class="amount-btn" aria-pressed="false">$10</button>
@@ -129,7 +129,7 @@
               <button type="button" class="amount-btn" aria-pressed="false">$1,000</button>
               <button type="button" class="amount-btn" aria-pressed="false">Other</button>
             </div>
-            <div class="step-info" id="amount-info">
+            <div class="step-info" id="amount-info" aria-live="polite">
               With a $25 donation, you will help supply training materials for individuals learning new skills.
             </div>
           </div>
@@ -140,8 +140,8 @@
           <div class="step-sidebar">
             <span class="step-number" aria-hidden="true">2</span>
           </div>
-          <div class="step-content">
-            <h3 class="step-title">Donation Type</h3>
+          <fieldset class="step-content">
+            <legend class="step-title">Donation Type</legend>
             <p class="step-subtitle">Choose the type of donation.</p>
             <div class="donation-type-btns" role="group" aria-label="Donation type">
               <button type="button" class="amount-btn is-selected" aria-pressed="true">Recurring (Monthly)</button>
@@ -158,8 +158,8 @@
           <div class="step-sidebar">
             <span class="step-number" aria-hidden="true">3</span>
           </div>
-          <div class="step-content">
-            <h3 class="step-title">Personal Information</h3>
+          <fieldset class="step-content">
+            <legend class="step-title">Personal Information</legend>
             <p class="step-subtitle">Enter your information.</p>
             <div class="personal-fields">
               <div class="form-field">
@@ -216,7 +216,7 @@
 
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/LifeSkillsTraining.png" alt="">
+              <img src="images/photos/LifeSkillsTraining.png" alt="Two people walk along an outdoor path together, one using a white cane and the other with a guide dog">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -229,7 +229,7 @@
 
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/CareerServices.png" alt="">
+              <img src="images/photos/EventsInKind.png" alt="A group of four people in golfing attire, holding prize baskets at a charity event">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -242,7 +242,7 @@
 
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/CorporatePartnership.png" alt="">
+              <img src="images/photos/DonateVehicle.png" alt="A person holding keys to a car">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -257,14 +257,14 @@
       </div>
     </section>
 
-    <!-- NEWSLETTER -->
-    <section class="section-newsletter" aria-labelledby="newsletter-heading">
+     <!-- NEWSLETTER -->
+    <section class="section-newsletter" aria-label="Stay connected">
       <div class="newsletter-copy">
-        <p class="eyebrow">STAY CONNECTED</p>
+        <p class="eyebrow" aria-hidden="true">STAY CONNECTED</p>
         <h2 id="newsletter-heading">Join our mailing list</h2>
         <p>Sign up to hear what's new, from program updates to upcoming events.</p>
       </div>
-      <form class="signup-card" action="#" method="post">
+      <form class="signup-card" aria-label="Mailing list signup">
         <div class="form-field">
           <label for="email-input">Email address</label>
           <input type="email" id="email-input" name="email" placeholder="example@email.com" autocomplete="email">
@@ -273,7 +273,7 @@
           <legend class="interest-legend">I'm interested in</legend>
           <div class="checkboxes">
             <label class="checkbox-label">
-              <input type="checkbox" name="interest" value="donating" checked>
+              <input type="checkbox" name="interest" value="donating">
               Donating
             </label>
             <label class="checkbox-label">
@@ -292,7 +292,7 @@
 
   </main><!-- end #content -->
 
-  <!-- ===================== FOOTER ===================== -->
+<!-- ===================== FOOTER ===================== -->
   <footer id="colophon" class="footer">
     <div class="footer-inner">
 
@@ -312,11 +312,11 @@
           </div>
         </address>
         <div class="social-links">
-          <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
+          <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
         </div>
       </div>
 
@@ -329,7 +329,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-nav-secondary" aria-label="Secondary footer navigation">
+      <nav class="footer-nav-secondary" aria-label="Footer navigation">
         <ul class="footer-nav-top">
           <li><a href="#">Austin Lighthouse Blog</a></li>
           <li><a href="#">For Employees</a></li>
@@ -365,12 +365,11 @@
       </div>
     </div>
     <div class="mobile-nav-socials">
-      <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="30" height="30"></a>
-    </div>
+      <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
   </div>
 
   <script>
