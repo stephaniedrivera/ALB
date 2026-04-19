@@ -476,6 +476,7 @@
         item.addEventListener('focusout',   function (e) {
           if (!item.contains(e.relatedTarget)) close();
         });
+        /* Escape closes and returns focus to trigger */
         item.addEventListener('keydown', function (e) {
           if (e.key === 'Escape') { close(); trigger.focus(); }
         });
