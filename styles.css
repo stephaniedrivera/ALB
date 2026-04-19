@@ -17,6 +17,7 @@
   --slate:    #44403C;
   --fog:      #D6D3D1;
   --stone:    #635D59;
+  --teal-900: #162E35;
 
   /* Layout */
   --content-max: 1400px;
@@ -239,6 +240,69 @@ fieldset {
 
 .nav-link:hover {
   color: var(--navy-700);
+}
+
+/* ============================================================
+   SERVICES DROPDOWN
+   ============================================================ */
+
+/* Wrapper — stretches to fill the full nav-bar height so the
+   dropdown anchors exactly to the nav's bottom edge */
+.nav-item {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdown panel */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--white);
+  padding: 33px 58px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  white-space: nowrap;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 150;
+  /* Hidden with smooth fade-in */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
+}
+
+/* Show on hover or keyboard focus-within */
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown links */
+.dropdown-item {
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--teal-900);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.dropdown-item:hover {
+  color: var(--navy-700);
+}
+
+.dropdown-item:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 /* Logo overlaps the nav */
@@ -1359,6 +1423,15 @@ fieldset {
     font-size: 22px;
     height: 56px;
     padding: 0 10px;
+  }
+
+  .dropdown-item {
+    font-size: 22px;
+  }
+
+  .nav-dropdown {
+    padding: 24px 32px;
+    gap: 20px;
   }
 
   .btn-contact,

@@ -32,7 +32,15 @@
           <a href="#" class="btn btn-donate">Donate</a>
         </nav>
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
-          <a href="#" class="nav-link">Our services</a>
+          <div class="nav-item has-dropdown">
+            <a href="#" class="nav-link" aria-haspopup="true" aria-expanded="false">Our services</a>
+            <div class="nav-dropdown" role="menu" aria-label="Our services">
+              <a href="#" class="dropdown-item" role="menuitem">Career coaching and support</a>
+              <a href="#" class="dropdown-item" role="menuitem">Technology for everyday life</a>
+              <a href="#" class="dropdown-item" role="menuitem">Independent living</a>
+              <a href="#" class="dropdown-item" role="menuitem">Eye care and vision assessment</a>
+            </div>
+          </div>
           <a href="#" class="nav-link">Shop our store</a>
           <a href="#" class="nav-link">Work with us</a>
           <a href="#" class="nav-link">Who we are</a>
@@ -450,6 +458,28 @@
           closeMenu();
           menuBtn.focus();
         }
+      });
+    })();
+  </script>
+
+  <script>
+    /* Services dropdown — sync aria-expanded with hover/focus state */
+    (function () {
+      var items = document.querySelectorAll('.nav-item.has-dropdown');
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.nav-link');
+        function open()  { trigger.setAttribute('aria-expanded', 'true');  }
+        function close() { trigger.setAttribute('aria-expanded', 'false'); }
+        item.addEventListener('mouseenter', open);
+        item.addEventListener('mouseleave', close);
+        item.addEventListener('focusin',    open);
+        item.addEventListener('focusout',   function (e) {
+          if (!item.contains(e.relatedTarget)) close();
+        });
+        /* Escape closes and returns focus to trigger */
+        item.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') { close(); trigger.focus(); }
+        });
       });
     })();
   </script>
