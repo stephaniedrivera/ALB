@@ -370,6 +370,8 @@ fieldset {
 .section-impact {
   display: flex;
   min-height: 488px;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .impact-copy {
@@ -551,6 +553,8 @@ fieldset {
 .section-video {
   display: flex;
   min-height: 488px;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .video-media {
