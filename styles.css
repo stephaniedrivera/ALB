@@ -17,8 +17,6 @@
   --slate:    #44403C;
   --fog:      #D6D3D1;
   --stone:    #635D59;
-  --teal-300: #A3C2CB;
-
   /* Layout */
   --content-max: 1440px;
 }
@@ -1153,7 +1151,7 @@ fieldset {
 }
 
 .footer-nav-bottom {
-  border-top: 2px solid var(--teal-300);
+  border-top: 2px solid var(--navy-300);
   padding-top: 8px;
   padding-bottom: 50px;
 }
