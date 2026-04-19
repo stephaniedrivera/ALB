@@ -77,159 +77,178 @@
   <!-- ===================== MAIN CONTENT ===================== -->
   <main id="content">
 
-    <!-- HERO
-         REVIEW: replace hero_Image.png with a donate-specific photo when available -->
-    <section class="section-donate-hero" aria-labelledby="donate-hero-heading">
-      <div class="donate-hero-bg" aria-hidden="true">
-        <img src="images/photos/hero_Image.png" alt="">
+    <!-- HERO — same visual structure as homepage -->
+    <section class="section-hero donate-hero" aria-labelledby="donate-hero-heading">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-ellipse-large"></div>
+        <div class="hero-ellipse-small"></div>
+        <div class="hero-photo-mask">
+          <img src="images/photos/hero_Image.png" alt="">
+        </div>
       </div>
-      <div class="donate-hero-content">
-        <p class="eyebrow">MAKE A DIFFERENCE</p>
-        <h1 id="donate-hero-heading">Help Us Light<br>the Way</h1>
-        <p>Your gift empowers blind and visually impaired Texans to build independence, find meaningful work, and thrive in their communities.</p>
-        <a href="#donation-form" class="btn btn-donate">Donate now</a>
+      <div class="hero-content">
+        <h1 id="donate-hero-heading">Help Us<br>Light the Way</h1>
+        <div class="hero-sub">
+          <p>Help empower individuals who are blind or visually impaired through training, employment, and essential services.</p>
+          <a href="#donation-form" class="btn btn-donate">Donate Now</a>
+        </div>
       </div>
     </section>
 
-    <!-- IMPACT STRIP -->
-    <div class="donate-impact-strip" role="region" aria-label="Donation impact">
-      <p>Every dollar you give goes directly to <span class="gold">empowering Texans</span> with vision loss — helping them live independently, build careers, and <span class="gold">find their place</span> in the world.</p>
-    </div>
+    <!-- IMPACT -->
+    <section class="section-donate-impact" aria-label="Donation impact">
+      <div class="donate-impact-inner">
+        <p class="eyebrow">YOUR IMPACT</p>
+        <p class="donate-impact-text">Every donation, partnership and purchase helps us create <span class="gold">jobs</span>, <span class="gold">access</span> &amp; <span class="gold">opportunity</span>.</p>
+      </div>
+    </section>
 
     <!-- DONATION FORM -->
     <section class="section-donate-form" id="donation-form" aria-labelledby="donate-form-heading">
-      <div class="donate-form-inner">
-        <h2 id="donate-form-heading">Make your donation</h2>
+      <h2 id="donate-form-heading" class="donate-section-title">Donate</h2>
 
-        <form class="donation-form" action="#" method="post" novalidate>
+      <form class="donation-form" action="#" method="post" novalidate>
 
-          <!-- ── STEP 1: CHOOSE AMOUNT ── -->
-          <div class="donation-step">
-            <div class="step-header">
-              <span class="step-label" aria-hidden="true">1</span>
-              <h3 class="step-title">Choose your amount</h3>
+        <!-- ── STEP 1: CHOOSE AMOUNT ── -->
+        <div class="donation-step">
+          <div class="step-sidebar">
+            <span class="step-number" aria-hidden="true">1</span>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Choose Your Amount</h3>
+            <p class="step-subtitle">Select your donation amount.</p>
+            <div class="amount-grid" role="group" aria-label="Preset donation amounts">
+              <button type="button" class="amount-btn" aria-pressed="false">$10</button>
+              <button type="button" class="amount-btn is-selected" aria-pressed="true">$25</button>
+              <button type="button" class="amount-btn" aria-pressed="false">$50</button>
+              <button type="button" class="amount-btn" aria-pressed="false">$100</button>
+              <button type="button" class="amount-btn" aria-pressed="false">$250</button>
+              <button type="button" class="amount-btn" aria-pressed="false">$500</button>
+              <button type="button" class="amount-btn" aria-pressed="false">$1,000</button>
+              <button type="button" class="amount-btn" aria-pressed="false">Other</button>
             </div>
-            <div class="step-body">
-              <div class="amount-grid" role="group" aria-label="Preset donation amounts">
-                <button type="button" class="amount-btn" aria-pressed="false">$25</button>
-                <button type="button" class="amount-btn is-selected" aria-pressed="true">$50</button>
-                <button type="button" class="amount-btn" aria-pressed="false">$100</button>
-                <button type="button" class="amount-btn" aria-pressed="false">$250</button>
-                <button type="button" class="amount-btn" aria-pressed="false">$500</button>
+            <div class="step-info" id="amount-info">
+              With a $25 donation, you will help supply training materials for individuals learning new skills.
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 2: DONATION TYPE ── -->
+        <div class="donation-step">
+          <div class="step-sidebar">
+            <span class="step-number" aria-hidden="true">2</span>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Donation Type</h3>
+            <p class="step-subtitle">Choose the type of donation.</p>
+            <div class="donation-type-btns" role="group" aria-label="Donation type">
+              <button type="button" class="amount-btn is-selected" aria-pressed="true">Recurring (Monthly)</button>
+              <button type="button" class="amount-btn" aria-pressed="false">One Time Donation</button>
+            </div>
+            <div class="step-info">
+              Monthly donations provide ongoing support and create lasting impact.
+            </div>
+          </div>
+        </div>
+
+        <!-- ── STEP 3: PERSONAL INFORMATION ── -->
+        <div class="donation-step">
+          <div class="step-sidebar">
+            <span class="step-number" aria-hidden="true">3</span>
+          </div>
+          <div class="step-content">
+            <h3 class="step-title">Personal Information</h3>
+            <p class="step-subtitle">Enter your information.</p>
+            <div class="personal-fields">
+              <div class="form-field">
+                <label for="donor-name">Name</label>
+                <input type="text" id="donor-name" name="name" placeholder="This will appear as the donors name" autocomplete="name" required>
               </div>
-              <div class="amount-custom">
-                <label for="custom-amount">Custom amount</label>
-                <div class="custom-amount-wrap">
-                  <span class="currency-symbol" aria-hidden="true">$</span>
-                  <input
-                    type="number"
-                    id="custom-amount"
-                    name="custom_amount"
-                    min="1"
-                    step="1"
-                    placeholder="Other amount"
-                    aria-label="Enter a custom donation amount in dollars">
-                </div>
+              <div class="form-field">
+                <label for="donor-email">Email Address</label>
+                <input type="email" id="donor-email" name="email" placeholder="example@email.com" autocomplete="email" required>
               </div>
-            </div>
-          </div>
-
-          <!-- ── STEP 2: DONATION TYPE ── -->
-          <div class="donation-step">
-            <div class="step-header">
-              <span class="step-label" aria-hidden="true">2</span>
-              <h3 class="step-title">Donation type</h3>
-            </div>
-            <div class="step-body">
-              <fieldset style="border:none;padding:0;margin:0;">
-                <legend class="visually-hidden">Donation frequency</legend>
-                <div class="donation-type-options">
-                  <label class="donation-type-option">
-                    <input type="radio" name="donation_type" value="one-time" checked>
-                    <span class="type-label">One-time</span>
-                  </label>
-                  <label class="donation-type-option">
-                    <input type="radio" name="donation_type" value="monthly">
-                    <span class="type-label">Monthly</span>
-                  </label>
-                </div>
-              </fieldset>
-              <p class="donation-hint">Monthly giving provides Austin Lighthouse with sustainable, year-round support for our programs.</p>
-            </div>
-          </div>
-
-          <!-- ── STEP 3: PERSONAL INFORMATION ── -->
-          <div class="donation-step">
-            <div class="step-header">
-              <span class="step-label" aria-hidden="true">3</span>
-              <h3 class="step-title">Personal information</h3>
-            </div>
-            <div class="step-body">
-              <div class="personal-info-grid">
-                <div class="form-field">
-                  <label for="donor-first">First name</label>
-                  <input type="text" id="donor-first" name="first_name" autocomplete="given-name" required>
-                </div>
-                <div class="form-field">
-                  <label for="donor-last">Last name</label>
-                  <input type="text" id="donor-last" name="last_name" autocomplete="family-name" required>
-                </div>
-                <div class="form-field personal-info-full">
-                  <label for="donor-email">Email address</label>
-                  <input type="email" id="donor-email" name="email" autocomplete="email" required>
-                </div>
-                <div class="form-field personal-info-full">
-                  <label for="donor-honor">In honor of <span class="field-optional">(optional)</span></label>
-                  <input type="text" id="donor-honor" name="in_honor_of" placeholder="Name of person or organization">
-                </div>
+              <div class="form-field">
+                <label for="donor-phone">Phone Number</label>
+                <input type="tel" id="donor-phone" name="phone" placeholder="+1 (123) 456-7890" autocomplete="tel">
               </div>
+              <label class="honor-checkbox">
+                <input type="checkbox" name="honor_memorial">
+                <span>Make this donation in honor or memory of someone.</span>
+              </label>
             </div>
           </div>
+        </div>
 
-          <!-- SUBMIT -->
-          <div class="donate-submit-row">
-            <button type="submit" class="btn btn-donate donate-submit">Complete my donation</button>
-          </div>
+        <!-- SUBMIT -->
+        <button type="submit" class="btn btn-donate donate-cta">Donate</button>
+        <p class="donate-disclaimer">
+          You will be redirected to a secure payment page. Your payment is secure and encrypted.<br>
+          Austin Lighthouse for the Blind is a registered nonprofit organization.
+        </p>
 
-        </form>
-      </div>
+      </form>
     </section>
 
     <!-- EMPLOYEE MATCHING -->
     <section class="section-employee-match" aria-labelledby="match-heading">
-      <div class="employee-match-inner">
-        <div class="match-copy">
-          <p class="eyebrow">DOUBLE YOUR IMPACT</p>
-          <h2 id="match-heading">Does your employer match gifts?</h2>
-          <p>Many companies match charitable donations made by their employees — sometimes dollar-for-dollar. If your employer offers a matching gift program, your contribution to Austin Lighthouse could go twice as far.</p>
-          <p>Check with your HR department or use the link below to search for your company's matching program.</p>
-          <a href="#" class="btn btn-outline">Check if your employer matches</a>
+      <div class="employee-match-card">
+        <h2 id="match-heading">Your donation could be matched</h2>
+        <p>Many companies match employee donations, which could increase your impact. If your employer participates, your donation could double or more.</p>
+        <div class="form-field employer-search">
+          <label for="employer-search">Find your employer</label>
+          <div class="search-input-wrap">
+            <img src="images/icons/icon_Search.svg" alt="" width="24" height="24" aria-hidden="true">
+            <input type="text" id="employer-search" name="employer" placeholder="Search for a company">
+          </div>
         </div>
+        <button type="button" class="btn btn-donate">Check Eligibility</button>
       </div>
     </section>
 
     <!-- OTHER WAYS TO GIVE -->
     <section class="section-other-ways" aria-labelledby="other-ways-heading">
       <div class="other-ways-inner">
-        <h2 id="other-ways-heading">Other ways to give</h2>
+        <h2 id="other-ways-heading">Other Ways to Give</h2>
         <div class="other-ways-grid">
 
-          <article class="other-way-card">
-            <h3>Planned Giving</h3>
-            <p>Leave a lasting legacy by including Austin Lighthouse in your estate plans, will, or charitable trust. A planned gift is one of the most meaningful ways to shape the future for blind and visually impaired Texans.</p>
-            <a href="#" class="btn btn-outline">Learn about planned giving</a>
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/LifeSkillsTraining.png" alt="">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Planned Giving</h3>
+                <p>Include Austin Lighthouse in your will, trust, or estate plan and ensure your impact shines for generations.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Learn More</a>
+            </div>
           </article>
 
-          <article class="other-way-card">
-            <h3>Events &amp; In-Kind Support</h3>
-            <p>Support our mission through in-kind donations of goods or services, or host a fundraising event that benefits Austin Lighthouse programs. Every contribution — big or small — makes a real difference.</p>
-            <a href="#" class="btn btn-outline">Get involved</a>
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/CareerServices.png" alt="">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Events &amp; In-Kind Support</h3>
+                <p>Sponsor or attend an event, host a fundraiser, or donate equipment, services, or supplies — in-kind gifts support everything from daily operations to special events.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Give Creatively</a>
+            </div>
           </article>
 
-          <article class="other-way-card">
-            <h3>Donate a Vehicle</h3>
-            <p>Turn your used car, truck, or boat into meaningful support for our community. Our vehicle donation program makes it easy to give — we handle the pickup and paperwork, and your gift may be tax-deductible.</p>
-            <a href="#" class="btn btn-outline">Donate a vehicle</a>
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/CorporatePartnership.png" alt="">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Donate a Vehicle</h3>
+                <p>Donate your car, truck, boat, or motorcycle through our partner CARS. Free pickup, tax-deductible, zero hassle.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Get Started</a>
+            </div>
           </article>
 
         </div>
@@ -414,42 +433,24 @@
   </script>
 
   <script>
-    /* Donation amount button toggle */
+    /* Toggle button groups — amount grid + donation type */
     (function () {
-      var grid = document.querySelector('.amount-grid');
-      var customInput = document.getElementById('custom-amount');
-      if (!grid) return;
-
-      var buttons = grid.querySelectorAll('.amount-btn');
-
-      function selectBtn(btn) {
-        buttons.forEach(function (b) {
-          b.classList.remove('is-selected');
-          b.setAttribute('aria-pressed', 'false');
-        });
-        btn.classList.add('is-selected');
-        btn.setAttribute('aria-pressed', 'true');
-        /* Clear custom field when a preset is chosen */
-        if (customInput) customInput.value = '';
-      }
-
-      buttons.forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          selectBtn(btn);
-        });
-      });
-
-      /* Deselect preset buttons when the user types a custom amount */
-      if (customInput) {
-        customInput.addEventListener('input', function () {
-          if (customInput.value) {
+      function makeToggleGroup(container) {
+        if (!container) return;
+        var buttons = container.querySelectorAll('.amount-btn');
+        buttons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
             buttons.forEach(function (b) {
               b.classList.remove('is-selected');
               b.setAttribute('aria-pressed', 'false');
             });
-          }
+            btn.classList.add('is-selected');
+            btn.setAttribute('aria-pressed', 'true');
+          });
         });
       }
+      makeToggleGroup(document.querySelector('.amount-grid'));
+      makeToggleGroup(document.querySelector('.donation-type-btns'));
     })();
   </script>
 

@@ -1388,181 +1388,168 @@ fieldset {
 }
 
 /* ============================================================
-   DONATE PAGE — HERO
+   DONATE PAGE — HERO OVERRIDE
+   Reuses .section-hero structure; adjusts h1 height for shorter heading
    ============================================================ */
-.section-donate-hero {
-  position: relative;
-  min-height: 560px;
+.donate-hero .hero-content h1 {
+  height: auto;
+  min-height: 200px;
+  align-items: flex-start;
+}
+
+/* ============================================================
+   DONATE PAGE — IMPACT SECTION
+   ============================================================ */
+.section-donate-impact {
+  background-color: var(--navy-700);
+  padding: 56px 104px;
   display: flex;
   align-items: center;
-  background-color: var(--navy-900);
-  overflow: hidden;
+  min-height: 488px;
 }
 
-.donate-hero-bg {
-  position: absolute;
-  inset: 0;
-}
-
-.donate-hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  opacity: 0.3;
-}
-
-.donate-hero-content {
-  position: relative;
-  z-index: 2;
+.donate-impact-inner {
   max-width: var(--content-max);
-  width: 100%;
   margin: 0 auto;
-  padding: 80px 40px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.donate-hero-content h1 {
+.donate-impact-text {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 88px;
-  line-height: 1.05;
+  font-size: 56px;
+  line-height: 1.1;
   color: var(--white);
-  max-width: 800px;
-}
-
-.donate-hero-content > p:not(.eyebrow) {
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--white);
-  max-width: 560px;
-}
-
-/* ============================================================
-   DONATE PAGE — IMPACT STRIP
-   Full-bleed navy band with gold-highlighted text
-   ============================================================ */
-.donate-impact-strip {
-  background-color: var(--navy-700);
-  padding: 56px max(40px, calc((100% - var(--content-max)) / 2 + 40px));
-}
-
-.donate-impact-strip p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.35;
-  color: var(--white);
-  max-width: 960px;
 }
 
 /* ============================================================
    DONATE PAGE — DONATION FORM
    ============================================================ */
 .section-donate-form {
-  padding: 80px 40px;
-  background-color: var(--mist);
-}
-
-.donate-form-inner {
-  max-width: 820px;
-  margin: 0 auto;
+  padding: 0 40px 80px;
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  align-items: center;
+  gap: 32px;
 }
 
-.donate-form-inner > h2 {
+.donate-section-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1.1;
   color: var(--ink);
   text-align: center;
+  padding-top: 56px;
 }
 
 .donation-form {
-  background-color: var(--white);
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  overflow: hidden;
+  max-width: 1244px;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .donation-step {
-  padding: 40px;
-  border-bottom: 1px solid var(--fog);
-}
-
-.step-header {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 32px;
+  align-items: stretch;
+  background-color: var(--white);
+  border: 1px solid var(--fog);
+  border-radius: 8px;
+  width: 100%;
 }
 
-/* Numbered circle — navy-500 background */
-.step-label {
+.step-sidebar {
+  width: 156px;
+  flex-shrink: 0;
+  background-color: var(--navy-500);
+  border-radius: 8px 0 0 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border-radius: 50%;
-  background-color: var(--navy-500);
-  color: var(--white);
+  padding: 10px;
+}
+
+.step-number {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 20px;
-  line-height: 1;
+  font-size: 88px;
+  line-height: 1.1;
+  color: var(--white);
+  text-align: center;
+}
+
+.step-content {
+  flex: 1;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .step-title {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 40px;
+  line-height: 1.1;
   color: var(--ink);
 }
 
-/* Preset amount buttons */
+.step-subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.step-info {
+  background-color: var(--navy-100);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* Amount preset buttons */
 .amount-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 28px;
+  gap: 16px;
 }
 
 .amount-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 14px 28px;
+  padding: 16px 40px;
   border-radius: 32px;
-  border: 2px solid var(--navy-300);
+  border: 3px solid var(--navy-900);
   background-color: var(--white);
   color: var(--navy-700);
   font-family: 'Atkinson Hyperlegible', sans-serif;
   font-weight: 700;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1;
   cursor: pointer;
   transition: background-color 0.15s, color 0.15s, border-color 0.15s;
-  min-width: 100px;
+  min-width: 120px;
+  height: 69px;
 }
 
 .amount-btn:hover {
   background-color: var(--navy-100);
-  border-color: var(--navy-700);
 }
 
 .amount-btn.is-selected {
   background-color: var(--navy-700);
-  border-color: var(--navy-700);
+  border-color: var(--navy-900);
   color: var(--white);
 }
 
@@ -1571,217 +1558,150 @@ fieldset {
   outline-offset: 2px;
 }
 
-/* Custom amount field */
-.amount-custom {
+/* Donation type pill buttons */
+.donation-type-btns {
+  display: flex;
+  gap: 17px;
+  flex-wrap: wrap;
+}
+
+/* Personal info fields */
+.personal-fields {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 280px;
+  gap: 24px;
+  max-width: 420px;
 }
 
-.amount-custom label {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--ink);
-}
-
-.custom-amount-wrap {
-  display: flex;
-  align-items: stretch;
-  border: 1px solid var(--fog);
-  border-radius: 5px;
-  background-color: var(--mist);
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-
-.custom-amount-wrap:focus-within {
-  border-color: var(--navy-300);
-}
-
-.currency-symbol {
+/* Honor/memorial checkbox */
+.honor-checkbox {
   display: flex;
   align-items: center;
-  padding: 10px 12px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: var(--stone);
-  background-color: var(--fog);
-  flex-shrink: 0;
-  user-select: none;
-}
-
-.custom-amount-wrap input[type="number"] {
-  border: none;
-  background: transparent;
-  padding: 10px 12px;
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-size: 18px;
-  color: var(--ink);
-  width: 100%;
-  outline: none;
-  -moz-appearance: textfield;
-}
-
-.custom-amount-wrap input[type="number"]::-webkit-outer-spin-button,
-.custom-amount-wrap input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Donation type: one-time / monthly */
-.donation-type-options {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
-}
-
-.donation-type-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  gap: 16px;
   cursor: pointer;
+  max-width: 769px;
 }
 
-.donation-type-option input[type="radio"] {
+.honor-checkbox input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--navy-300);
-  border-radius: 50%;
-  background-color: var(--mist);
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: var(--navy-500);
   cursor: pointer;
   position: relative;
-  flex-shrink: 0;
-  transition: border-color 0.15s;
+  transition: opacity 0.15s;
 }
 
-.donation-type-option input[type="radio"]:checked {
-  border-color: var(--navy-700);
-  background-color: var(--navy-700);
-}
-
-.donation-type-option input[type="radio"]:checked::after {
-  content: '';
+.honor-checkbox input[type="checkbox"]:checked::after {
+  content: '✓';
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--white);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
 }
 
-.donation-type-option input[type="radio"]:focus-visible {
+.honor-checkbox input[type="checkbox"]:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 2px;
 }
 
-.type-label {
-  font-family: 'Atkinson Hyperlegible', sans-serif;
-  font-weight: 700;
-  font-size: 22px;
+.honor-checkbox span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.5;
   color: var(--ink);
 }
 
-.donation-hint {
+/* Donate CTA button */
+.donate-cta {
+  font-size: 30px;
+  padding: 16px 40px;
+  min-width: 240px;
+}
+
+.donate-disclaimer {
   font-size: 16px;
-  line-height: 1.5;
-  color: var(--stone);
-  font-style: italic;
-  max-width: 480px;
-}
-
-/* Personal information grid */
-.personal-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-}
-
-.personal-info-full {
-  grid-column: 1 / -1;
-}
-
-/* Donate form label overrides — slightly more compact than newsletter */
-.donation-form .form-field label {
-  font-size: 18px;
-  padding: 0;
-}
-
-.field-optional {
-  font-weight: 400;
-  font-size: 15px;
-  color: var(--stone);
-}
-
-/* Submit row at the bottom of the card */
-.donate-submit-row {
-  padding: 32px 40px;
-  border-top: 1px solid var(--fog);
-  background-color: var(--white);
-}
-
-.donate-submit {
-  width: 100%;
-  font-size: 26px;
+  line-height: 1.4;
+  color: var(--ink);
+  text-align: center;
+  max-width: 815px;
 }
 
 /* ============================================================
    DONATE PAGE — EMPLOYEE MATCHING
    ============================================================ */
 .section-employee-match {
-  background-color: var(--navy-900);
-  padding: 80px 40px;
+  background-color: var(--mist);
+  padding: 48px 40px 56px;
 }
 
-.employee-match-inner {
-  max-width: var(--content-max);
+.employee-match-card {
+  max-width: 1268px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 80px;
-}
-
-.match-copy {
-  flex: 1;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 32px 168px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  max-width: 640px;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
 }
 
-.match-copy h2 {
+.employee-match-card h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
   font-size: 40px;
   line-height: 1.1;
-  color: var(--white);
+  color: var(--ink);
 }
 
-.match-copy > p {
+.employee-match-card > p {
   font-size: 18px;
   line-height: 1.4;
-  color: var(--white);
+  color: var(--ink);
+  max-width: 700px;
 }
 
-.match-copy .btn-outline {
-  background-color: transparent;
-  border-color: var(--white);
-  color: var(--white);
-  align-self: flex-start;
-  width: auto;
+.employer-search {
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--mist);
+  border: 1px solid var(--fog);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.search-input-wrap img {
+  flex-shrink: 0;
+}
+
+.search-input-wrap input[type="text"] {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Atkinson Hyperlegible', sans-serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--stone);
+  outline: none;
   min-width: 0;
-}
-
-.match-copy .btn-outline:hover {
-  background-color: rgba(255, 255, 255, 0.12);
-  opacity: 1;
 }
 
 /* ============================================================
@@ -1789,7 +1709,7 @@ fieldset {
    ============================================================ */
 .section-other-ways {
   background-color: var(--mist);
-  padding: 80px 40px;
+  padding: 40px 40px 72px;
 }
 
 .other-ways-inner {
@@ -1797,13 +1717,13 @@ fieldset {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 64px;
 }
 
 .other-ways-inner > h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 48px;
+  font-size: 56px;
   line-height: 1.1;
   color: var(--ink);
   text-align: center;
@@ -1813,40 +1733,6 @@ fieldset {
   display: flex;
   gap: 24px;
   justify-content: center;
-}
-
-.other-way-card {
-  background-color: var(--white);
-  border: 1px solid var(--fog);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.10);
-  padding: 40px 32px;
-  flex: 1;
-  max-width: 420px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.other-way-card h3 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 1.2;
-  color: var(--navy-900);
-}
-
-.other-way-card p {
-  font-size: 18px;
-  line-height: 1.4;
-  color: var(--slate);
-  flex: 1;
-}
-
-.other-way-card .btn-outline {
-  font-size: 20px;
-  padding: 14px 24px;
-  width: 100%;
 }
 
 /* ============================================================
@@ -1944,8 +1830,13 @@ fieldset {
     flex-wrap: wrap;
   }
 
-  .stat-card {
+  .cards-grid .stat-card {
     flex: 0 0 calc(50% - 12px);
+    max-width: none;
+  }
+
+  .other-ways-grid .stat-card {
+    flex: 0 0 calc(33.33% - 16px);
     max-width: none;
   }
 
@@ -1961,21 +1852,20 @@ fieldset {
   }
 
   /* --- DONATE PAGE --- */
-  .donate-hero-content h1 {
-    font-size: 64px;
+  .donate-impact-text {
+    font-size: 40px;
   }
 
-  .donate-impact-strip p {
-    font-size: 26px;
+  .section-donate-impact {
+    padding: 56px 40px;
   }
 
   .other-ways-grid {
     flex-wrap: wrap;
   }
 
-  .other-way-card {
-    flex: 0 0 calc(50% - 12px);
-    max-width: none;
+  .employee-match-card {
+    padding: 32px 80px;
   }
 
   /* --- NEWSLETTER --- */
@@ -2290,116 +2180,89 @@ fieldset {
   }
 
   /* --- DONATE PAGE --- */
-  .section-donate-hero {
-    min-height: 380px;
-  }
-
-  .donate-hero-content {
-    padding: 56px 16px;
-    gap: 20px;
-  }
-
-  .donate-hero-content h1 {
-    font-size: 48px;
-  }
-
-  .donate-hero-content > p:not(.eyebrow) {
-    font-size: 18px;
-  }
-
-  .donate-impact-strip {
+  .section-donate-impact {
     padding: 40px 16px;
+    min-height: auto;
   }
 
-  .donate-impact-strip p {
-    font-size: 20px;
+  .donate-impact-text {
+    font-size: 28px;
   }
 
   .section-donate-form {
-    padding: 48px 16px;
+    padding: 0 16px 48px;
   }
 
-  .donate-form-inner > h2 {
-    font-size: 36px;
+  .donate-section-title {
+    font-size: 40px;
+    padding-top: 40px;
   }
 
   .donation-step {
-    padding: 28px 20px;
+    flex-direction: column;
+  }
+
+  .step-sidebar {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    padding: 12px;
+    min-height: 80px;
+  }
+
+  .step-number {
+    font-size: 48px;
+  }
+
+  .step-content {
+    padding: 20px 20px;
   }
 
   .step-title {
-    font-size: 22px;
+    font-size: 28px;
   }
 
-  .amount-grid {
-    gap: 10px;
+  .step-subtitle {
+    font-size: 18px;
   }
 
   .amount-btn {
     font-size: 18px;
     padding: 12px 20px;
     min-width: 80px;
+    height: auto;
   }
 
-  .amount-custom {
+  .personal-fields {
     max-width: 100%;
   }
 
-  .personal-info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .personal-info-full {
-    grid-column: 1;
-  }
-
-  .donate-submit-row {
-    padding: 24px 20px;
-  }
-
-  .donate-submit {
-    font-size: 22px;
+  .honor-checkbox span {
+    font-size: 18px;
   }
 
   .section-employee-match {
-    padding: 56px 16px;
+    padding: 40px 16px;
   }
 
-  .employee-match-inner {
-    flex-direction: column;
-    gap: 40px;
+  .employee-match-card {
+    padding: 32px 24px;
   }
 
-  .match-copy {
-    max-width: 100%;
-  }
-
-  .match-copy h2 {
-    font-size: 32px;
-  }
-
-  .match-copy .btn-outline {
-    align-self: stretch;
-    text-align: center;
-    width: 100%;
+  .employee-match-card h2 {
+    font-size: 28px;
   }
 
   .section-other-ways {
-    padding: 56px 16px;
+    padding: 40px 16px 56px;
   }
 
   .other-ways-inner > h2 {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .other-ways-grid {
     flex-direction: column;
     align-items: stretch;
-  }
-
-  .other-way-card {
-    max-width: none;
-    flex: none;
   }
 
   /* --- PARTNERS --- */
