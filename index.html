@@ -46,10 +46,9 @@
           <a href="#" class="nav-link">Who we are</a>
         </nav>
       </div>
-      <!-- Logo links to homepage; alt="" because the link's aria-label already names the destination -->
       <div class="header-logo">
-        <a href="/" aria-label="Austin Lighthouse for the Blind — home">
-          <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
+        <a href="index.html" aria-label="Austin Lighthouse for the Blind — home">
+          <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="Austin Lighthouse for the Blind logo">
         </a>
       </div>
 
@@ -82,7 +81,7 @@
         <div class="hero-ellipse-large"></div>
         <div class="hero-ellipse-small"></div>
         <div class="hero-photo-mask">
-          <img src="images/photos/hero_Image.png" alt="">
+          <img src="images/photos/hero_Image.png" alt="A person standing in profile against a bright outdoor background. They’re confident and calm, wearing a striped shirt and sunglasses, holding a white cane upright in front of them. The photo has a circular crop.">
         </div>
       </div>
       <div class="hero-content">
@@ -95,16 +94,17 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="section-impact" aria-labelledby="impact-heading">
+    <section class="section-impact" aria-label="Our Impact"">
       <div class="impact-copy">
         <div class="impact-copy-inner">
-          <p class="eyebrow">OUR IMPACT</p>
+          <p class="eyebrow" aria-hidden="true">OUR IMPACT</p>
           <h2 id="impact-heading">More than 90 years of <span class="gold">changing lives</span> in Texas</h2>
           <p>We measure our success in the independence, careers, and confidence of the people we serve.</p>
         </div>
       </div>
       <div class="impact-stats">
         <div class="stats-grid">
+          <dl id="impact-statistics">
           <div class="stat-item border-right">
             <span class="stat-number">1000+</span>
             <span class="stat-label">Texans served</span>
@@ -125,6 +125,7 @@
             <span class="stat-label">Training hours</span>
             <p class="stat-desc">Hands-on instruction delivered through ALB's 25+ programs annually</p>
           </div>
+          </dl>
         </div>
       </div>
     </section>
@@ -134,11 +135,9 @@
       <div class="cards-inner">
         <h2 id="cards-heading" class="cards-heading">We provide jobs, training, and community support</h2>
         <div class="cards-grid">
-
-          <!-- REVIEW: verify alt text matches the actual photo -->
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/LifeSkillsTraining.png" alt="An instructor guides a student using adaptive technology during a life skills session">
+              <img src="images/photos/LifeSkillsTraining.png" alt="Two people walk along an outdoor path together, one using a white cane and the other with a guide dog">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -148,11 +147,9 @@
               <a href="#" class="btn btn-outline">Enroll in a course</a>
             </div>
           </article>
-
-          <!-- REVIEW: verify alt text matches the actual photo -->
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/CareerServices.png" alt="An ALB employee focused at their workstation">
+              <img src="images/photos/CareerServices.png" alt="A person wearing headphones works at a computer in an office, focused on their screen">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -162,11 +159,9 @@
               <a href="#" class="btn btn-outline">Build your career</a>
             </div>
           </article>
-
-          <!-- REVIEW: verify alt text matches the actual photo -->
           <article class="stat-card">
             <div class="card-photo">
-              <img src="images/photos/CorporatePartnership.png" alt="ALB staff meeting with a corporate partner">
+              <img src="images/photos/CorporatePartnership.png" alt="Two people work side by side in a warehouse, one wearing a headset while the other passes handheld equipment.">
             </div>
             <div class="card-body">
               <div class="card-text">
@@ -176,15 +171,12 @@
               <a href="#" class="btn btn-outline">Get in touch</a>
             </div>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- VIDEO
-         Replace YOUR_VIDEO_ID with the YouTube video ID (e.g. dQw4w9WgXcQ).
-         Ensure the video has closed captions enabled on YouTube for full WCAG AA compliance. -->
-    <section class="section-video" aria-labelledby="video-heading">
+    <!-- VIDEO -->
+    <section class="section-video" aria-label="Watch our story">
       <div class="video-media">
         <div class="video-wrapper">
           <iframe
@@ -199,7 +191,7 @@
       </div>
       <div class="video-copy">
         <div class="video-copy-inner">
-          <p class="eyebrow">WATCH OUR STORY</p>
+          <p class="eyebrow" aria-hidden="true">WATCH OUR STORY</p>
           <h2 id="video-heading">Hear directly from the people <span class="gold">we serve</span></h2>
           <p>Watch how blind and visually impaired people are building independence with Austin Lighthouse for the Blind.</p>
         </div>
@@ -211,7 +203,7 @@
 
       <article class="testimonial testimonial-left">
         <div class="testimonial-photo">
-          <img src="images/photos/profilePhoto_AngieH.png" alt="Portrait of Angie H.">
+          <img src="images/photos/profilePhoto_AngieH.png" alt="Angie H. in a red and grey button up work shirt, focused on a task at their workstation.">
         </div>
         <figure class="testimonial-quote">
           <div class="quote-body">
@@ -237,20 +229,20 @@
           <figcaption>— Yvonne G.</figcaption>
         </figure>
         <div class="testimonial-photo">
-          <img src="images/photos/profilePhoto_YvonneG.png" alt="Portrait of Yvonne G.">
+          <img src="images/photos/profilePhoto_YvonneG.png" alt="Yvonne G. with shoulder-length hair smiling, holding a cane with blue grip tape on the handle">
         </div>
       </article>
 
     </section>
 
     <!-- NEWSLETTER -->
-    <section class="section-newsletter" aria-labelledby="newsletter-heading">
+    <section class="section-newsletter" aria-label="Stay connected">
       <div class="newsletter-copy">
-        <p class="eyebrow">STAY CONNECTED</p>
+        <p class="eyebrow" aria-hidden="true">STAY CONNECTED</p>
         <h2 id="newsletter-heading">Join our mailing list</h2>
         <p>Sign up to hear what's new, from program updates to upcoming events.</p>
       </div>
-      <form class="signup-card" action="#" method="post">
+      <form class="signup-card" aria-label="Mailing list signup">
         <div class="form-field">
           <label for="email-input">Email address</label>
           <input type="email" id="email-input" name="email" placeholder="example@email.com" autocomplete="email">
@@ -277,13 +269,12 @@
     </section>
 
     <!-- PARTNERS -->
-    <section class="section-partners" aria-labelledby="partners-heading">
+    <section class="section-partners" aria-label="Our partners">
       <div class="partners-inner">
         <h2 id="partners-heading" class="partners-heading">Austin Lighthouse for the Blind is proud to partner with these companies</h2>
         <div class="ticker-container">
           <div class="ticker-track">
             <div class="ticker-inner">
-              <!-- Real list — read by screen readers -->
               <ul class="ticker-list">
                 <li class="partner-logo">
                   <img src="images/logos/logo_NIB.png" alt="National Industries for the Blind">
@@ -362,11 +353,11 @@
           </div>
         </address>
         <div class="social-links">
-          <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
-          <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
+          <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
         </div>
       </div>
 
@@ -379,7 +370,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-nav-secondary" aria-label="Secondary footer navigation">
+      <nav class="footer-nav-secondary" aria-label="Footer navigation">
         <ul class="footer-nav-top">
           <li><a href="#">Austin Lighthouse Blog</a></li>
           <li><a href="#">For Employees</a></li>
@@ -415,12 +406,11 @@
       </div>
     </div>
     <div class="mobile-nav-socials">
-      <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
-      <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="30" height="30"></a>
-    </div>
+      <a href="#" aria-label="Facebook, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X, opens in new tab" target="_blank" rel="noopener noreferrer"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
   </div>
 
   <script>
