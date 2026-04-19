@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Austin Lighthouse for the Blind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip navigation (visible on keyboard focus) -->
+  <nav aria-label="Skip links" class="skip-links">
+    <ul>
+      <li><a class="skip-link" href="#site-navigation">Skip to main navigation</a></li>
+      <li><a class="skip-link" href="#content">Skip to main content</a></li>
+      <li><a class="skip-link" href="#colophon">Skip to footer</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===================== HEADER NAV ===================== -->
+  <header class="header-nav">
+    <div class="header-inner">
+      <div class="nav-stack">
+        <nav class="top-nav" aria-label="Utility navigation">
+          <button class="search-btn" aria-label="Search">
+            <img src="images/icons/icon_Search.svg" alt="" width="37" height="37">
+          </button>
+          <a href="#" class="btn btn-contact">Contact us</a>
+          <a href="#" class="btn btn-donate">Donate</a>
+        </nav>
+        <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
+          <a href="#" class="nav-link">Our services</a>
+          <a href="#" class="nav-link">Shop our store</a>
+          <a href="#" class="nav-link">Work with us</a>
+          <a href="#" class="nav-link">Who we are</a>
+        </nav>
+      </div>
+      <!-- Logo links to homepage; alt="" because the link's aria-label already names the destination -->
+      <div class="header-logo">
+        <a href="/" aria-label="Austin Lighthouse for the Blind — home">
+          <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== MAIN CONTENT ===================== -->
+  <main id="content">
+
+    <!-- HERO -->
+    <section class="section-hero" aria-labelledby="hero-heading">
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-ellipse-large"></div>
+        <div class="hero-ellipse-small"></div>
+        <div class="hero-photo-mask">
+          <img src="images/photos/hero_Image.png" alt="">
+        </div>
+      </div>
+      <div class="hero-content">
+        <h1 id="hero-heading">Empowering the blind and visually impaired in Austin</h1>
+        <div class="hero-sub">
+          <p>Since 1934, Austin Lighthouse has helped blind and visually impaired Texans build independence, find work, and thrive in their community.</p>
+          <a href="#" class="btn btn-donate hero-cta">Explore our services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="section-impact" aria-labelledby="impact-heading">
+      <div class="impact-copy">
+        <p class="eyebrow">OUR IMPACT</p>
+        <h2 id="impact-heading">More than 90 years of <span class="gold">changing lives</span> in Texas</h2>
+        <p>We measure our success in the independence, careers, and confidence of the people we serve.</p>
+      </div>
+      <div class="impact-stats">
+        <div class="stats-grid">
+          <div class="stat-item border-right">
+            <span class="stat-number">1000+</span>
+            <span class="stat-label">Texans served</span>
+            <p class="stat-desc">Blind and visually impaired Texans supported through ALB programs</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">94%</span>
+            <span class="stat-label">Job placement</span>
+            <p class="stat-desc">Career program graduates who find employment within 6 months</p>
+          </div>
+          <div class="stat-item border-right">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Employees</span>
+            <p class="stat-desc">People with vision loss currently employed at Austin Lighthouse</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">8,076</span>
+            <span class="stat-label">Training hours</span>
+            <p class="stat-desc">Hands-on instruction delivered through ALB's 25+ programs annually</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="section-cards" aria-labelledby="cards-heading">
+      <div class="cards-inner">
+        <h2 id="cards-heading" class="cards-heading">We provide jobs, training, and community support</h2>
+        <div class="cards-grid">
+
+          <!-- REVIEW: verify alt text matches the actual photo -->
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/LifeSkillsTraining.png" alt="An instructor guides a student using adaptive technology during a life skills session">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Life Skills Training</h3>
+                <p>From adaptive technology to independent living, our training programs help blind and visually impaired Texans build confidence and skills for everyday life.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Enroll in a course</a>
+            </div>
+          </article>
+
+          <!-- REVIEW: verify alt text matches the actual photo -->
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/CareerServices.png" alt="An ALB employee focused at their workstation">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Career Services</h3>
+                <p>Austin Lighthouse for the Blind is one of the largest employers of blind and visually impaired individuals in Texas. We also help people build careers outside of ALB.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Build your career</a>
+            </div>
+          </article>
+
+          <!-- REVIEW: verify alt text matches the actual photo -->
+          <article class="stat-card">
+            <div class="card-photo">
+              <img src="images/photos/CorporatePartnership.png" alt="ALB staff meeting with a corporate partner">
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <h3>Corporate Partnership</h3>
+                <p>Looking to hire, contract our services, or support our mission? Let's chat about how we can work together.</p>
+              </div>
+              <a href="#" class="btn btn-outline">Get in touch</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO
+         Replace YOUR_VIDEO_ID with the YouTube video ID (e.g. dQw4w9WgXcQ).
+         Ensure the video has closed captions enabled on YouTube for full WCAG AA compliance. -->
+    <section class="section-video" aria-labelledby="video-heading">
+      <div class="video-media">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/WLQHauS5P_Q?cc_load_policy=1"
+            title="Austin Lighthouse for the Blind — hear directly from the people we serve"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+      <div class="video-copy">
+        <p class="eyebrow">WATCH OUR STORY</p>
+        <h2 id="video-heading">Hear directly from the people <span class="gold">we serve</span></h2>
+        <p>Watch how blind and visually impaired people are building independence with Austin Lighthouse for the Blind.</p>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section-testimonials" aria-label="Testimonials">
+
+      <article class="testimonial testimonial-left">
+        <div class="testimonial-photo">
+          <img src="images/photos/profilePhoto_AngieH.png" alt="Portrait of Angie H.">
+        </div>
+        <figure class="testimonial-quote">
+          <div class="quote-body">
+            <img src="images/icons/openQuote.svg" alt="" class="quote-open" width="48" height="38">
+            <blockquote>
+              <p>Being at the Austin Lighthouse has allowed me to support and guide our employees to capture their dreams and enhance skills. Never say never; it can be done just in a different way.</p>
+            </blockquote>
+            <img src="images/icons/EndQuote.svg" alt="" class="quote-close" width="48" height="38">
+          </div>
+          <figcaption>—Angie H.</figcaption>
+        </figure>
+      </article>
+
+      <article class="testimonial testimonial-right">
+        <figure class="testimonial-quote">
+          <div class="quote-body">
+            <img src="images/icons/openQuote.svg" alt="" class="quote-open" width="48" height="38">
+            <blockquote>
+              <p>My aunt used to live in Houston and work for a Lighthouse there. She was born without sight and went to the Mississippi School for the Deaf and Blind. I appreciate all that your company does.</p>
+            </blockquote>
+            <img src="images/icons/EndQuote.svg" alt="" class="quote-close" width="48" height="38">
+          </div>
+          <figcaption>— Yvonne G.</figcaption>
+        </figure>
+        <div class="testimonial-photo">
+          <img src="images/photos/profilePhoto_YvonneG.png" alt="Portrait of Yvonne G.">
+        </div>
+      </article>
+
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="section-newsletter" aria-labelledby="newsletter-heading">
+      <div class="newsletter-copy">
+        <p class="eyebrow">STAY CONNECTED</p>
+        <h2 id="newsletter-heading">Join our mailing list</h2>
+        <p>Sign up to hear what's new, from program updates to upcoming events.</p>
+      </div>
+      <form class="signup-card" action="#" method="post">
+        <div class="form-field">
+          <label for="email-input">Email address</label>
+          <input type="email" id="email-input" name="email" placeholder="example@email.com" autocomplete="email">
+        </div>
+        <fieldset class="form-interests">
+          <legend class="interest-legend">I'm interested in</legend>
+          <div class="checkboxes">
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="donating">
+              Donating
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="volunteering">
+              Volunteering
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interest" value="newsletter">
+              Newsletter
+            </label>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-donate signup-btn">Sign me up!</button>
+      </form>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section-partners" aria-labelledby="partners-heading">
+      <div class="partners-inner">
+        <h2 id="partners-heading" class="partners-heading">Austin Lighthouse for the Blind is proud to partner with these companies</h2>
+        <div class="ticker-container">
+          <div class="ticker-track">
+            <div class="ticker-inner">
+              <!-- Real list — read by screen readers -->
+              <ul class="ticker-list">
+                <li class="partner-logo">
+                  <img src="images/logos/logo_NIB.png" alt="National Industries for the Blind">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_WorksWonders.png" alt="Works Wonders">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_AustinRetina.png" alt="Austin Retina Associates">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_Berkeley.png" alt="Berkley Human Services">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_HEB.png" alt="H-E-B">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_Paycom.png" alt="Paycom">
+                </li>
+              </ul>
+              <!-- Duplicate list — hidden from screen readers, creates seamless loop -->
+              <ul class="ticker-list" aria-hidden="true">
+                <li class="partner-logo">
+                  <img src="images/logos/logo_NIB.png" alt="">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_WorksWonders.png" alt="">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_AustinRetina.png" alt="">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_Berkeley.png" alt="">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_HEB.png" alt="">
+                </li>
+                <li class="partner-logo">
+                  <img src="images/logos/logo_Paycom.png" alt="">
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button class="ticker-pause-btn" aria-label="Pause partner logos" aria-pressed="false">
+            <svg class="icon-pause" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+              <rect x="2" y="2" width="4" height="12" fill="currentColor"/>
+              <rect x="10" y="2" width="4" height="12" fill="currentColor"/>
+            </svg>
+            <svg class="icon-play" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false" hidden>
+              <polygon points="3,2 14,8 3,14" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- end #content -->
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer id="colophon" class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-left">
+        <a href="/" aria-label="Austin Lighthouse for the Blind — home">
+          <img src="images/logos/logo_Square.png" alt="" class="footer-logo">
+        </a>
+        <address>
+          <p class="footer-address">4512 S Pleasant Valley Rd<br>Austin, TX 78744</p>
+          <div class="contact-item">
+            <img src="images/icons/icon_Phone.svg" alt="" width="24" height="24">
+            <a href="tel:5124422329">512-442-2329</a>
+          </div>
+          <div class="contact-item">
+            <img src="images/icons/icon_Email.svg" alt="" width="24" height="24">
+            <a href="mailto:info@austinlighthouse.org">info@austinlighthouse.org</a>
+          </div>
+        </address>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><img src="images/icons/icon_Facebook.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="YouTube"><img src="images/icons/icon_YouTube.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="LinkedIn"><img src="images/icons/icon_LinkedIn.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Instagram"><img src="images/icons/icon_IG.svg" alt="" width="30" height="30"></a>
+          <a href="#" aria-label="Twitter / X"><img src="images/icons/icon_TwitterX.svg" alt="" width="25" height="23"></a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="#">Our services</a></li>
+          <li><a href="#">Shop our store</a></li>
+          <li><a href="#">Work with us</a></li>
+          <li><a href="#">Who we are</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-nav-secondary" aria-label="Secondary footer navigation">
+        <ul class="footer-nav-top">
+          <li><a href="#">Austin Lighthouse Blog</a></li>
+          <li><a href="#">For Employees</a></li>
+        </ul>
+        <ul class="footer-nav-bottom">
+          <li><a href="#">Safety Data Sheets</a></li>
+          <li><a href="#">Dispenser Instructions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var btn   = document.querySelector('.ticker-pause-btn');
+      var track = document.querySelector('.ticker-track');
+      if (!btn || !track) return;
+
+      btn.addEventListener('click', function () {
+        var paused = track.classList.toggle('is-paused');
+        btn.classList.toggle('is-paused', paused);
+        btn.setAttribute('aria-pressed', paused);
+        btn.setAttribute('aria-label', paused ? 'Play partner logos' : 'Pause partner logos');
+      });
+    })();
+  </script>
+</body>
+</html>
