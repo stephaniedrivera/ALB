@@ -1159,6 +1159,28 @@ fieldset {
 }
 
 /* ============================================================
+   RESPONSIVE — WIDE DESKTOP (min-width: 1441px)
+   At viewports wider than the content-max, the hero goes
+   full-bleed (matching the nav pattern) and the decorative
+   visual right-anchors so text and photo never overlap.
+   ============================================================ */
+@media (min-width: 1441px) {
+  .section-hero {
+    max-width: none;
+    margin: 0;
+    padding-left: max(40px, calc((100% - var(--content-max)) / 2 + 40px));
+  }
+
+  .hero-visual {
+    inset: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--content-max);
+  }
+}
+
+/* ============================================================
    RESPONSIVE — TABLET (max-width: 1024px)
    ============================================================ */
 @media (max-width: 1024px) {
