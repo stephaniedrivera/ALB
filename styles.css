@@ -170,7 +170,7 @@ fieldset {
   border-color: var(--navy-900);
   color: var(--navy-700);
   min-width: 0;
-  width: 328px;
+  width: 100%;
 }
 
 /* ============================================================
@@ -565,9 +565,9 @@ fieldset {
 }
 
 .cards-grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
-  justify-content: center;
 }
 
 .stat-card {
@@ -575,9 +575,6 @@ fieldset {
   border: 1px solid var(--fog);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  flex: 1;
-  min-width: 280px;
-  max-width: 384px;
   display: flex;
   flex-direction: column;
 }
@@ -601,7 +598,7 @@ fieldset {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 430px;
+  min-height: 430px;
   padding: 40px 32px;
 }
 
@@ -1888,15 +1885,6 @@ button.mobile-nav-link {
   }
 
   /* --- CARDS --- */
-  .cards-grid {
-    flex-wrap: wrap;
-  }
-
-  .cards-grid .stat-card {
-    flex: 0 0 calc(50% - 12px);
-    max-width: none;
-  }
-
   .other-ways-grid .stat-card {
     flex: 0 0 calc(33.33% - 16px);
     max-width: none;
@@ -1936,6 +1924,17 @@ button.mobile-nav-link {
   .signup-card {
     max-width: 560px;
     width: 100%;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — NARROW (max-width: 960px)
+   Below this width, 3 card columns become too cramped for the
+   content — drop to a single stacked column.
+   ============================================================ */
+@media (max-width: 960px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -2152,18 +2151,7 @@ button.mobile-nav-link {
     font-size: 32px;
   }
 
-  .cards-grid {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .stat-card {
-    width: 100%;
-    flex-shrink: 1;
-  }
-
   .btn-outline {
-    width: 100%;
     min-width: 0;
   }
 
