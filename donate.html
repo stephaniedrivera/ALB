@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Austin Lighthouse for the Blind</title>
+  <title>Donate — Austin Lighthouse for the Blind</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
     <ul>
       <li><a class="skip-link" href="#site-navigation">Skip to main navigation</a></li>
       <li><a class="skip-link" href="#content">Skip to main content</a></li>
+      <li><a class="skip-link" href="#donation-form">Skip to donation form</a></li>
       <li><a class="skip-link" href="#colophon">Skip to footer</a></li>
     </ul>
   </nav>
@@ -29,7 +30,7 @@
             <img src="images/icons/icon_Search.svg" alt="" width="37" height="37">
           </button>
           <a href="#" class="btn btn-contact">Contact us</a>
-          <a href="donate.html" class="btn btn-donate">Donate</a>
+          <a href="donate.html" class="btn btn-donate" aria-current="page">Donate</a>
         </nav>
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
           <div class="nav-item has-dropdown">
@@ -46,7 +47,7 @@
           <a href="#" class="nav-link">Who we are</a>
         </nav>
       </div>
-      <!-- Logo links to homepage; alt="" because the link's aria-label already names the destination -->
+      <!-- Logo links to homepage -->
       <div class="header-logo">
         <a href="/" aria-label="Austin Lighthouse for the Blind — home">
           <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
@@ -76,171 +77,163 @@
   <!-- ===================== MAIN CONTENT ===================== -->
   <main id="content">
 
-    <!-- HERO -->
-    <section class="section-hero" aria-labelledby="hero-heading">
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-ellipse-large"></div>
-        <div class="hero-ellipse-small"></div>
-        <div class="hero-photo-mask">
-          <img src="images/photos/hero_Image.png" alt="">
-        </div>
+    <!-- HERO
+         REVIEW: replace hero_Image.png with a donate-specific photo when available -->
+    <section class="section-donate-hero" aria-labelledby="donate-hero-heading">
+      <div class="donate-hero-bg" aria-hidden="true">
+        <img src="images/photos/hero_Image.png" alt="">
       </div>
-      <div class="hero-content">
-        <h1 id="hero-heading">Empowering the blind and visually impaired in Austin</h1>
-        <div class="hero-sub">
-          <p>Since 1934, Austin Lighthouse has helped blind and visually impaired Texans build independence, find work, and thrive in their community.</p>
-          <a href="#" class="btn btn-donate hero-cta">Explore our services</a>
-        </div>
+      <div class="donate-hero-content">
+        <p class="eyebrow">MAKE A DIFFERENCE</p>
+        <h1 id="donate-hero-heading">Help Us Light<br>the Way</h1>
+        <p>Your gift empowers blind and visually impaired Texans to build independence, find meaningful work, and thrive in their communities.</p>
+        <a href="#donation-form" class="btn btn-donate">Donate now</a>
       </div>
     </section>
 
-    <!-- IMPACT -->
-    <section class="section-impact" aria-labelledby="impact-heading">
-      <div class="impact-copy">
-        <div class="impact-copy-inner">
-          <p class="eyebrow">OUR IMPACT</p>
-          <h2 id="impact-heading">More than 90 years of <span class="gold">changing lives</span> in Texas</h2>
-          <p>We measure our success in the independence, careers, and confidence of the people we serve.</p>
-        </div>
-      </div>
-      <div class="impact-stats">
-        <div class="stats-grid">
-          <div class="stat-item border-right">
-            <span class="stat-number">1000+</span>
-            <span class="stat-label">Texans served</span>
-            <p class="stat-desc">Blind and visually impaired Texans supported through ALB programs</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">94%</span>
-            <span class="stat-label">Job placement</span>
-            <p class="stat-desc">Career program graduates who find employment within 6 months</p>
-          </div>
-          <div class="stat-item border-right">
-            <span class="stat-number">200+</span>
-            <span class="stat-label">Employees</span>
-            <p class="stat-desc">People with vision loss currently employed at Austin Lighthouse</p>
-          </div>
-          <div class="stat-item">
-            <span class="stat-number">8,076</span>
-            <span class="stat-label">Training hours</span>
-            <p class="stat-desc">Hands-on instruction delivered through ALB's 25+ programs annually</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- IMPACT STRIP -->
+    <div class="donate-impact-strip" role="region" aria-label="Donation impact">
+      <p>Every dollar you give goes directly to <span class="gold">empowering Texans</span> with vision loss — helping them live independently, build careers, and <span class="gold">find their place</span> in the world.</p>
+    </div>
 
-    <!-- CARDS -->
-    <section class="section-cards" aria-labelledby="cards-heading">
-      <div class="cards-inner">
-        <h2 id="cards-heading" class="cards-heading">We provide jobs, training, and community support</h2>
-        <div class="cards-grid">
+    <!-- DONATION FORM -->
+    <section class="section-donate-form" id="donation-form" aria-labelledby="donate-form-heading">
+      <div class="donate-form-inner">
+        <h2 id="donate-form-heading">Make your donation</h2>
 
-          <!-- REVIEW: verify alt text matches the actual photo -->
-          <article class="stat-card">
-            <div class="card-photo">
-              <img src="images/photos/LifeSkillsTraining.png" alt="An instructor guides a student using adaptive technology during a life skills session">
+        <form class="donation-form" action="#" method="post" novalidate>
+
+          <!-- ── STEP 1: CHOOSE AMOUNT ── -->
+          <div class="donation-step">
+            <div class="step-header">
+              <span class="step-label" aria-hidden="true">1</span>
+              <h3 class="step-title">Choose your amount</h3>
             </div>
-            <div class="card-body">
-              <div class="card-text">
-                <h3>Life Skills Training</h3>
-                <p>From adaptive technology to independent living, our training programs help blind and visually impaired Texans build confidence and skills for everyday life.</p>
+            <div class="step-body">
+              <div class="amount-grid" role="group" aria-label="Preset donation amounts">
+                <button type="button" class="amount-btn" aria-pressed="false">$25</button>
+                <button type="button" class="amount-btn is-selected" aria-pressed="true">$50</button>
+                <button type="button" class="amount-btn" aria-pressed="false">$100</button>
+                <button type="button" class="amount-btn" aria-pressed="false">$250</button>
+                <button type="button" class="amount-btn" aria-pressed="false">$500</button>
               </div>
-              <a href="#" class="btn btn-outline">Enroll in a course</a>
+              <div class="amount-custom">
+                <label for="custom-amount">Custom amount</label>
+                <div class="custom-amount-wrap">
+                  <span class="currency-symbol" aria-hidden="true">$</span>
+                  <input
+                    type="number"
+                    id="custom-amount"
+                    name="custom_amount"
+                    min="1"
+                    step="1"
+                    placeholder="Other amount"
+                    aria-label="Enter a custom donation amount in dollars">
+                </div>
+              </div>
             </div>
+          </div>
+
+          <!-- ── STEP 2: DONATION TYPE ── -->
+          <div class="donation-step">
+            <div class="step-header">
+              <span class="step-label" aria-hidden="true">2</span>
+              <h3 class="step-title">Donation type</h3>
+            </div>
+            <div class="step-body">
+              <fieldset style="border:none;padding:0;margin:0;">
+                <legend class="visually-hidden">Donation frequency</legend>
+                <div class="donation-type-options">
+                  <label class="donation-type-option">
+                    <input type="radio" name="donation_type" value="one-time" checked>
+                    <span class="type-label">One-time</span>
+                  </label>
+                  <label class="donation-type-option">
+                    <input type="radio" name="donation_type" value="monthly">
+                    <span class="type-label">Monthly</span>
+                  </label>
+                </div>
+              </fieldset>
+              <p class="donation-hint">Monthly giving provides Austin Lighthouse with sustainable, year-round support for our programs.</p>
+            </div>
+          </div>
+
+          <!-- ── STEP 3: PERSONAL INFORMATION ── -->
+          <div class="donation-step">
+            <div class="step-header">
+              <span class="step-label" aria-hidden="true">3</span>
+              <h3 class="step-title">Personal information</h3>
+            </div>
+            <div class="step-body">
+              <div class="personal-info-grid">
+                <div class="form-field">
+                  <label for="donor-first">First name</label>
+                  <input type="text" id="donor-first" name="first_name" autocomplete="given-name" required>
+                </div>
+                <div class="form-field">
+                  <label for="donor-last">Last name</label>
+                  <input type="text" id="donor-last" name="last_name" autocomplete="family-name" required>
+                </div>
+                <div class="form-field personal-info-full">
+                  <label for="donor-email">Email address</label>
+                  <input type="email" id="donor-email" name="email" autocomplete="email" required>
+                </div>
+                <div class="form-field personal-info-full">
+                  <label for="donor-honor">In honor of <span class="field-optional">(optional)</span></label>
+                  <input type="text" id="donor-honor" name="in_honor_of" placeholder="Name of person or organization">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBMIT -->
+          <div class="donate-submit-row">
+            <button type="submit" class="btn btn-donate donate-submit">Complete my donation</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- EMPLOYEE MATCHING -->
+    <section class="section-employee-match" aria-labelledby="match-heading">
+      <div class="employee-match-inner">
+        <div class="match-copy">
+          <p class="eyebrow">DOUBLE YOUR IMPACT</p>
+          <h2 id="match-heading">Does your employer match gifts?</h2>
+          <p>Many companies match charitable donations made by their employees — sometimes dollar-for-dollar. If your employer offers a matching gift program, your contribution to Austin Lighthouse could go twice as far.</p>
+          <p>Check with your HR department or use the link below to search for your company's matching program.</p>
+          <a href="#" class="btn btn-outline">Check if your employer matches</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OTHER WAYS TO GIVE -->
+    <section class="section-other-ways" aria-labelledby="other-ways-heading">
+      <div class="other-ways-inner">
+        <h2 id="other-ways-heading">Other ways to give</h2>
+        <div class="other-ways-grid">
+
+          <article class="other-way-card">
+            <h3>Planned Giving</h3>
+            <p>Leave a lasting legacy by including Austin Lighthouse in your estate plans, will, or charitable trust. A planned gift is one of the most meaningful ways to shape the future for blind and visually impaired Texans.</p>
+            <a href="#" class="btn btn-outline">Learn about planned giving</a>
           </article>
 
-          <!-- REVIEW: verify alt text matches the actual photo -->
-          <article class="stat-card">
-            <div class="card-photo">
-              <img src="images/photos/CareerServices.png" alt="An ALB employee focused at their workstation">
-            </div>
-            <div class="card-body">
-              <div class="card-text">
-                <h3>Career Services</h3>
-                <p>Austin Lighthouse for the Blind is one of the largest employers of blind and visually impaired individuals in Texas. We also help people build careers outside of ALB.</p>
-              </div>
-              <a href="#" class="btn btn-outline">Build your career</a>
-            </div>
+          <article class="other-way-card">
+            <h3>Events &amp; In-Kind Support</h3>
+            <p>Support our mission through in-kind donations of goods or services, or host a fundraising event that benefits Austin Lighthouse programs. Every contribution — big or small — makes a real difference.</p>
+            <a href="#" class="btn btn-outline">Get involved</a>
           </article>
 
-          <!-- REVIEW: verify alt text matches the actual photo -->
-          <article class="stat-card">
-            <div class="card-photo">
-              <img src="images/photos/CorporatePartnership.png" alt="ALB staff meeting with a corporate partner">
-            </div>
-            <div class="card-body">
-              <div class="card-text">
-                <h3>Corporate Partnership</h3>
-                <p>Looking to hire, contract our services, or support our mission? Let's chat about how we can work together.</p>
-              </div>
-              <a href="#" class="btn btn-outline">Get in touch</a>
-            </div>
+          <article class="other-way-card">
+            <h3>Donate a Vehicle</h3>
+            <p>Turn your used car, truck, or boat into meaningful support for our community. Our vehicle donation program makes it easy to give — we handle the pickup and paperwork, and your gift may be tax-deductible.</p>
+            <a href="#" class="btn btn-outline">Donate a vehicle</a>
           </article>
 
         </div>
       </div>
-    </section>
-
-    <!-- VIDEO
-         Replace YOUR_VIDEO_ID with the YouTube video ID (e.g. dQw4w9WgXcQ).
-         Ensure the video has closed captions enabled on YouTube for full WCAG AA compliance. -->
-    <section class="section-video" aria-labelledby="video-heading">
-      <div class="video-media">
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/WLQHauS5P_Q?cc_load_policy=1"
-            title="Austin Lighthouse for the Blind — hear directly from the people we serve"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
-        </div>
-      </div>
-      <div class="video-copy">
-        <div class="video-copy-inner">
-          <p class="eyebrow">WATCH OUR STORY</p>
-          <h2 id="video-heading">Hear directly from the people <span class="gold">we serve</span></h2>
-          <p>Watch how blind and visually impaired people are building independence with Austin Lighthouse for the Blind.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section class="section-testimonials" aria-label="Testimonials">
-
-      <article class="testimonial testimonial-left">
-        <div class="testimonial-photo">
-          <img src="images/photos/profilePhoto_AngieH.png" alt="Portrait of Angie H.">
-        </div>
-        <figure class="testimonial-quote">
-          <div class="quote-body">
-            <img src="images/icons/openQuote.svg" alt="" class="quote-open" width="48" height="38">
-            <blockquote>
-              <p>Being at the Austin Lighthouse has allowed me to support and guide our employees to capture their dreams and enhance skills. Never say never; it can be done just in a different way.</p>
-            </blockquote>
-            <img src="images/icons/EndQuote.svg" alt="" class="quote-close" width="48" height="38">
-          </div>
-          <figcaption>—Angie H.</figcaption>
-        </figure>
-      </article>
-
-      <article class="testimonial testimonial-right">
-        <figure class="testimonial-quote">
-          <div class="quote-body">
-            <img src="images/icons/openQuote.svg" alt="" class="quote-open" width="48" height="38">
-            <blockquote>
-              <p>My aunt used to live in Houston and work for a Lighthouse there. She was born without sight and went to the Mississippi School for the Deaf and Blind. I appreciate all that your company does.</p>
-            </blockquote>
-            <img src="images/icons/EndQuote.svg" alt="" class="quote-close" width="48" height="38">
-          </div>
-          <figcaption>— Yvonne G.</figcaption>
-        </figure>
-        <div class="testimonial-photo">
-          <img src="images/photos/profilePhoto_YvonneG.png" alt="Portrait of Yvonne G.">
-        </div>
-      </article>
-
     </section>
 
     <!-- NEWSLETTER -->
@@ -259,7 +252,7 @@
           <legend class="interest-legend">I'm interested in</legend>
           <div class="checkboxes">
             <label class="checkbox-label">
-              <input type="checkbox" name="interest" value="donating">
+              <input type="checkbox" name="interest" value="donating" checked>
               Donating
             </label>
             <label class="checkbox-label">
@@ -274,70 +267,6 @@
         </fieldset>
         <button type="submit" class="btn btn-donate signup-btn">Sign me up!</button>
       </form>
-    </section>
-
-    <!-- PARTNERS -->
-    <section class="section-partners" aria-labelledby="partners-heading">
-      <div class="partners-inner">
-        <h2 id="partners-heading" class="partners-heading">Austin Lighthouse for the Blind is proud to partner with these companies</h2>
-        <div class="ticker-container">
-          <div class="ticker-track">
-            <div class="ticker-inner">
-              <!-- Real list — read by screen readers -->
-              <ul class="ticker-list">
-                <li class="partner-logo">
-                  <img src="images/logos/logo_NIB.png" alt="National Industries for the Blind">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_WorksWonders.png" alt="Works Wonders">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_AustinRetina.png" alt="Austin Retina Associates">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_Berkeley.png" alt="Berkley Human Services">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_HEB.png" alt="H-E-B">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_Paycom.png" alt="Paycom">
-                </li>
-              </ul>
-              <!-- Duplicate list — hidden from screen readers, creates seamless loop -->
-              <ul class="ticker-list" aria-hidden="true">
-                <li class="partner-logo">
-                  <img src="images/logos/logo_NIB.png" alt="">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_WorksWonders.png" alt="">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_AustinRetina.png" alt="">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_Berkeley.png" alt="">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_HEB.png" alt="">
-                </li>
-                <li class="partner-logo">
-                  <img src="images/logos/logo_Paycom.png" alt="">
-                </li>
-              </ul>
-            </div>
-          </div>
-          <button class="ticker-pause-btn" aria-label="Pause partner logos" aria-pressed="false">
-            <svg class="icon-pause" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
-              <rect x="2" y="2" width="4" height="12" fill="currentColor"/>
-              <rect x="10" y="2" width="4" height="12" fill="currentColor"/>
-            </svg>
-            <svg class="icon-play" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false" hidden>
-              <polygon points="3,2 14,8 3,14" fill="currentColor"/>
-            </svg>
-          </button>
-        </div>
-      </div>
     </section>
 
   </main><!-- end #content -->
@@ -485,18 +414,44 @@
   </script>
 
   <script>
+    /* Donation amount button toggle */
     (function () {
-      var btn   = document.querySelector('.ticker-pause-btn');
-      var track = document.querySelector('.ticker-track');
-      if (!btn || !track) return;
+      var grid = document.querySelector('.amount-grid');
+      var customInput = document.getElementById('custom-amount');
+      if (!grid) return;
 
-      btn.addEventListener('click', function () {
-        var paused = track.classList.toggle('is-paused');
-        btn.classList.toggle('is-paused', paused);
-        btn.setAttribute('aria-pressed', paused);
-        btn.setAttribute('aria-label', paused ? 'Play partner logos' : 'Pause partner logos');
+      var buttons = grid.querySelectorAll('.amount-btn');
+
+      function selectBtn(btn) {
+        buttons.forEach(function (b) {
+          b.classList.remove('is-selected');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-selected');
+        btn.setAttribute('aria-pressed', 'true');
+        /* Clear custom field when a preset is chosen */
+        if (customInput) customInput.value = '';
+      }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          selectBtn(btn);
+        });
       });
+
+      /* Deselect preset buttons when the user types a custom amount */
+      if (customInput) {
+        customInput.addEventListener('input', function () {
+          if (customInput.value) {
+            buttons.forEach(function (b) {
+              b.classList.remove('is-selected');
+              b.setAttribute('aria-pressed', 'false');
+            });
+          }
+        });
+      }
     })();
   </script>
+
 </body>
 </html>
