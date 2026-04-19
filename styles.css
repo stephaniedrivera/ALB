@@ -18,6 +18,9 @@
   --fog:      #D6D3D1;
   --stone:    #635D59;
   --teal-300: #A3C2CB;
+
+  /* Layout */
+  --content-max: 1440px;
 }
 
 /* --- SKIP LINKS --- */
@@ -79,8 +82,6 @@ body {
   font-size: 18px;
   color: var(--ink);
   background-color: var(--white);
-  max-width: 1440px;
-  margin: 0 auto;
   overflow-x: hidden;
 }
 
@@ -174,7 +175,7 @@ fieldset {
   display: flex;
   align-items: center;
   height: 100%;
-  padding-left: 40px;
+  padding-left: max(40px, calc((100% - var(--content-max)) / 2 + 40px));
 }
 
 /* Nav sits full-width behind the logo */
@@ -193,7 +194,7 @@ fieldset {
   justify-content: flex-end;
   align-items: center;
   gap: 40px;
-  padding: 16px 40px;
+  padding: 16px max(40px, calc((100% - var(--content-max)) / 2 + 40px));
 }
 
 .search-btn {
@@ -220,7 +221,7 @@ fieldset {
   justify-content: flex-end;
   align-items: center;
   gap: 15px;
-  padding: 16px 40px 16px 0;
+  padding: 16px max(40px, calc((100% - var(--content-max)) / 2 + 40px)) 16px 0;
   border-radius: 0 0 8px 8px;
 }
 
@@ -267,6 +268,8 @@ fieldset {
   padding-left: 40px;
   padding-right: 100px;
   overflow: hidden;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 /* Decorative visual layer */
@@ -326,8 +329,8 @@ fieldset {
 .hero-content {
   position: relative;
   z-index: 2;
-  flex-shrink: 0;
-  width: 712px;
+  flex: 1;
+  max-width: 712px;
   display: flex;
   flex-direction: column;
 }
@@ -348,7 +351,7 @@ fieldset {
   flex-direction: column;
   gap: 16px;
   padding: 8px;
-  width: 441px;
+  max-width: 441px;
 }
 
 .hero-sub p {
@@ -367,6 +370,8 @@ fieldset {
 .section-impact {
   display: flex;
   min-height: 488px;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .impact-copy {
@@ -374,9 +379,17 @@ fieldset {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
   justify-content: center;
-  padding: 40px 104px;
+  padding: 40px clamp(40px, 7.2vw, 104px);
+}
+
+.impact-copy-inner {
+  max-width: 640px;
+  width: 100%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .impact-copy h2 {
@@ -387,7 +400,7 @@ fieldset {
   color: var(--white);
 }
 
-.impact-copy > p:not(.eyebrow) {
+.impact-copy p:not(.eyebrow) {
   font-size: 18px;
   line-height: 1.4;
   color: var(--white);
@@ -398,7 +411,7 @@ fieldset {
   flex: 1;
   display: flex;
   align-items: center;
-  padding: 40px 64px;
+  padding: 40px clamp(32px, 4.4vw, 64px);
 }
 
 .stats-grid {
@@ -406,6 +419,8 @@ fieldset {
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
 }
 
 .stat-item {
@@ -457,6 +472,8 @@ fieldset {
   flex-direction: column;
   gap: 64px;
   padding: 32px 0;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .cards-heading {
@@ -479,8 +496,9 @@ fieldset {
   border: 1px solid var(--fog);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  width: 384px;
-  flex-shrink: 0;
+  flex: 1;
+  min-width: 280px;
+  max-width: 384px;
   display: flex;
   flex-direction: column;
 }
@@ -535,6 +553,8 @@ fieldset {
 .section-video {
   display: flex;
   min-height: 488px;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .video-media {
@@ -573,14 +593,21 @@ fieldset {
 
 .video-copy {
   background-color: var(--navy-700);
-  width: 597px;
-  flex-shrink: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px clamp(40px, 7.2vw, 104px);
+  overflow: hidden;
+}
+
+.video-copy-inner {
+  max-width: 640px;
+  width: 100%;
+  margin-left: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  justify-content: center;
-  padding: 40px;
-  overflow: hidden;
 }
 
 .video-copy h2 {
@@ -591,7 +618,7 @@ fieldset {
   color: var(--white);
 }
 
-.video-copy > p:not(.eyebrow) {
+.video-copy p:not(.eyebrow) {
   font-size: 18px;
   line-height: 1.4;
   color: var(--white);
@@ -613,6 +640,8 @@ fieldset {
   justify-content: center;
   gap: 16px;
   width: 100%;
+  max-width: var(--content-max);
+  margin: 0 auto;
   padding: 0 40px;
 }
 
@@ -692,8 +721,8 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 24px;
-  width: 548px;
-  flex-shrink: 0;
+  flex: 1;
+  max-width: 548px;
 }
 
 .newsletter-copy h2 {
@@ -719,8 +748,8 @@ fieldset {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  width: 557px;
-  flex-shrink: 0;
+  flex: 1;
+  max-width: 557px;
 }
 
 .form-field {
@@ -839,6 +868,8 @@ fieldset {
   flex-direction: column;
   gap: 32px;
   align-items: center;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .partners-heading {
@@ -983,6 +1014,8 @@ fieldset {
   justify-content: space-between;
   padding: 25px 40px;
   align-items: flex-start;
+  max-width: var(--content-max);
+  margin: 0 auto;
 }
 
 .footer-left {
@@ -1123,6 +1156,101 @@ fieldset {
   border-top: 2px solid var(--teal-300);
   padding-top: 8px;
   padding-bottom: 50px;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET (max-width: 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+
+  /* --- HEADER --- */
+  .header-nav {
+    height: 160px;
+  }
+
+  .header-logo {
+    width: 280px;
+    height: 128px;
+  }
+
+  .top-nav {
+    gap: 20px;
+    padding: 12px 24px;
+  }
+
+  .global-nav {
+    gap: 8px;
+    padding: 12px 24px 12px 0;
+  }
+
+  .nav-link {
+    font-size: 22px;
+    height: 56px;
+    padding: 0 10px;
+  }
+
+  .btn-contact,
+  .btn-donate {
+    font-size: 22px;
+    padding: 12px 24px;
+    min-width: 0;
+  }
+
+  /* --- HERO --- */
+  .hero-content h1 {
+    font-size: 64px;
+    height: auto;
+  }
+
+  /* --- IMPACT --- */
+  .section-impact {
+    flex-direction: column;
+  }
+
+  .impact-copy {
+    padding: 48px 40px;
+  }
+
+  .impact-stats {
+    padding: 48px 40px;
+  }
+
+  /* --- CARDS --- */
+  .cards-grid {
+    flex-wrap: wrap;
+  }
+
+  .stat-card {
+    flex: 0 0 calc(50% - 12px);
+    max-width: none;
+  }
+
+  /* --- VIDEO --- */
+  .section-video {
+    flex-direction: column;
+  }
+
+  .video-copy {
+    flex: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* --- NEWSLETTER --- */
+  .section-newsletter {
+    flex-direction: column;
+    gap: 48px;
+    padding: 80px 40px;
+  }
+
+  .newsletter-copy {
+    max-width: 100%;
+  }
+
+  .signup-card {
+    max-width: 560px;
+    width: 100%;
+  }
 }
 
 /* ============================================================
