@@ -44,6 +44,24 @@
           <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
         </a>
       </div>
+
+      <!-- Mobile controls — search + hamburger; hidden on desktop via CSS -->
+      <div class="mobile-nav-controls">
+        <button class="search-btn" aria-label="Search">
+          <img src="images/icons/icon_Search.svg" alt="" width="37" height="37">
+        </button>
+        <button class="mobile-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <svg class="icon-hamburger" width="24" height="18" viewBox="0 0 24 18" aria-hidden="true" focusable="false">
+            <rect y="0" width="24" height="3" rx="1.5" fill="currentColor"/>
+            <rect y="7.5" width="24" height="3" rx="1.5" fill="currentColor"/>
+            <rect y="15" width="24" height="3" rx="1.5" fill="currentColor"/>
+          </svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+            <line x1="2" y1="2" x2="18" y2="18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <line x1="18" y1="2" x2="2" y2="18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -363,6 +381,38 @@
 
     </div>
   </footer>
+
+  <script>
+    /* Mobile hamburger menu */
+    (function () {
+      var menuBtn  = document.querySelector('.mobile-menu-btn');
+      var navStack = document.querySelector('.nav-stack');
+      if (!menuBtn || !navStack) return;
+
+      function closeMenu() {
+        navStack.classList.remove('is-open');
+        menuBtn.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+      }
+
+      menuBtn.addEventListener('click', function () {
+        var isOpen = navStack.classList.toggle('is-open');
+        menuBtn.classList.toggle('is-open', isOpen);
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && navStack.classList.contains('is-open')) {
+          closeMenu();
+          menuBtn.focus();
+        }
+      });
+    })();
+  </script>
 
   <script>
     (function () {
