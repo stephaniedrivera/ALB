@@ -1397,32 +1397,6 @@ fieldset {
   align-items: flex-start;
 }
 
-/* ============================================================
-   DONATE PAGE — IMPACT SECTION
-   ============================================================ */
-.section-donate-impact {
-  background-color: var(--navy-700);
-  padding: 56px 104px;
-  display: flex;
-  align-items: center;
-  min-height: 488px;
-}
-
-.donate-impact-inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.donate-impact-text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 56px;
-  line-height: 1.1;
-  color: var(--white);
-}
 
 /* ============================================================
    DONATE PAGE — DONATION FORM
@@ -1852,14 +1826,6 @@ fieldset {
   }
 
   /* --- DONATE PAGE --- */
-  .donate-impact-text {
-    font-size: 40px;
-  }
-
-  .section-donate-impact {
-    padding: 56px 40px;
-  }
-
   .other-ways-grid {
     flex-wrap: wrap;
   }
@@ -2180,15 +2146,6 @@ fieldset {
   }
 
   /* --- DONATE PAGE --- */
-  .section-donate-impact {
-    padding: 40px 16px;
-    min-height: auto;
-  }
-
-  .donate-impact-text {
-    font-size: 28px;
-  }
-
   .section-donate-form {
     padding: 0 16px 48px;
   }
