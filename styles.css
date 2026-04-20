@@ -465,7 +465,7 @@ fieldset {
 .impact-copy-inner {
   max-width: 640px;
   width: 100%;
-  margin-left: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
