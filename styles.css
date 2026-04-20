@@ -1924,15 +1924,29 @@ button.mobile-nav-link {
 }
 
 /* ============================================================
-   RESPONSIVE — MOBILE (max-width: 768px)
+   RESPONSIVE — NAV SCALE DOWN (max-width: 1280px)
+   Reduce nav text before items start crowding the logo.
    ============================================================ */
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
 
-  /* --- BUTTONS --- */
-  .btn {
-    font-size: 24px;
-    padding: 14px 32px;
+  .global-nav {
+    gap: 4px;
   }
+
+  .nav-link {
+    font-size: 22px;
+    height: 56px;
+    padding: 0 10px;
+  }
+
+}
+
+/* ============================================================
+   RESPONSIVE — NAV COLLAPSE (max-width: 1200px)
+   Switch to hamburger menu before nav items overlap the logo.
+   Logo (362px) + 40px padding + nav items (~800px) needs ~1200px.
+   ============================================================ */
+@media (max-width: 1200px) {
 
   /* --- HEADER --- */
   .header-nav {
@@ -2029,6 +2043,19 @@ button.mobile-nav-link {
     width: 48px;
     height: 48px;
     padding: 6px;
+  }
+
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (max-width: 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* --- BUTTONS --- */
+  .btn {
+    font-size: 24px;
+    padding: 14px 32px;
   }
 
   /* --- HERO --- */
