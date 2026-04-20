@@ -504,6 +504,7 @@ fieldset {
   grid-template-columns: 1fr 1fr;
   gap: 32px;
   width: 100%;
+  list-style: none;
 }
 
 .stat-item {
@@ -861,15 +862,16 @@ fieldset {
   line-height: 1.4;
   color: var(--stone);
   width: 100%;
-  outline: none;
   transition: border-color 0.2s;
 }
 
-.form-field input[type="email"]:focus,
-.form-field input[type="text"]:focus,
-.form-field input[type="number"]:focus,
-.form-field input[type="tel"]:focus {
+.form-field input[type="email"]:focus-visible,
+.form-field input[type="text"]:focus-visible,
+.form-field input[type="number"]:focus-visible,
+.form-field input[type="tel"]:focus-visible {
   border-color: var(--navy-300);
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .form-interests {
@@ -936,6 +938,11 @@ fieldset {
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
+}
+
+.checkbox-label input[type="checkbox"]:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .signup-btn {
@@ -1655,10 +1662,16 @@ button.mobile-nav-link {
   height: 36px;
   flex-shrink: 0;
   border-radius: 8px;
-  background-color: var(--navy-500);
+  background-color: var(--mist);
+  border: 1px solid var(--fog);
   cursor: pointer;
   position: relative;
-  transition: opacity 0.15s;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.honor-checkbox input[type="checkbox"]:checked {
+  background-color: var(--navy-700);
+  border-color: var(--navy-700);
 }
 
 .honor-checkbox input[type="checkbox"]:checked::after {

@@ -33,12 +33,12 @@
         </nav>
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
           <div class="nav-item has-dropdown">
-            <button type="button" class="nav-link" aria-haspopup="true" aria-expanded="false">Our services</button>
-            <div class="nav-dropdown" role="menu" aria-label="Our services">
-              <a href="#" class="dropdown-item" role="menuitem">Career coaching and support</a>
-              <a href="#" class="dropdown-item" role="menuitem">Technology for everyday life</a>
-              <a href="#" class="dropdown-item" role="menuitem">Independent living</a>
-              <a href="#" class="dropdown-item" role="menuitem">Eye care and vision assessment</a>
+            <button type="button" class="nav-link" aria-expanded="false" aria-controls="services-dropdown">Our services</button>
+            <div id="services-dropdown" class="nav-dropdown" aria-label="Our services submenu">
+              <a href="#" class="dropdown-item">Career coaching and support</a>
+              <a href="#" class="dropdown-item">Technology for everyday life</a>
+              <a href="#" class="dropdown-item">Independent living</a>
+              <a href="#" class="dropdown-item">Eye care and vision assessment</a>
             </div>
           </div>
           <a href="#" class="nav-link">Shop our store</a>
@@ -48,7 +48,7 @@
       </div>
       <div class="header-logo">
         <a href="index.html" aria-label="Austin Lighthouse for the Blind — home">
-          <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="Austin Lighthouse for the Blind logo">
+          <img src="images/logos/logo_ALB_FullColorRectangle.png" alt="">
         </a>
       </div>
 
@@ -77,9 +77,9 @@
 
     <!-- HERO -->
     <section class="section-hero" aria-labelledby="hero-heading">
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-ellipse-large"></div>
-        <div class="hero-ellipse-small"></div>
+      <div class="hero-visual">
+        <div class="hero-ellipse-large" aria-hidden="true"></div>
+        <div class="hero-ellipse-small" aria-hidden="true"></div>
         <div class="hero-photo-mask">
           <img src="images/photos/hero_Image.png" alt="A person standing in profile against a bright outdoor background. They’re confident and calm, wearing a striped shirt and sunglasses, holding a white cane upright in front of them. The photo has a circular crop.">
         </div>
@@ -94,7 +94,7 @@
     </section>
 
     <!-- IMPACT -->
-    <section class="section-impact" aria-label="Our Impact"">
+    <section class="section-impact" aria-label="Our Impact">
       <div class="impact-copy">
         <div class="impact-copy-inner">
           <p class="eyebrow" aria-hidden="true">OUR IMPACT</p>
@@ -104,28 +104,28 @@
       </div>
       <div class="impact-stats">
         <div class="stats-grid">
-          <dl id="impact-statistics">
-          <div class="stat-item border-right">
-            <dt class="stat-number">1000+</dt>
-            <dd class="stat-label">Texans served</dd>
-            <dd class="stat-desc">Blind and visually impaired Texans supported through ALB programs</dd>
-          </div>
-          <div class="stat-item">
-            <dt class="stat-number">94%</dt>
-            <dd class="stat-label">Job placement</dd>
-            <dd class="stat-desc">Career program graduates who find employment within 6 months</dd>
-          </div>
-          <div class="stat-item border-right">
-            <dt class="stat-number">200+</dt>
-            <dd class="stat-label">Employees</dd>
-            <dd class="stat-desc">People with vision loss currently employed at Austin Lighthouse</dd>
-          </div>
-          <div class="stat-item">
-            <dt class="stat-number">8,076</dt>
-            <dd class="stat-label">Training hours</dd>
-            <dd class="stat-desc">Hands-on instruction delivered through ALB's 25+ programs annually</dd>
-          </div>
-          </dl>
+          <ul id="impact-statistics">
+          <li class="stat-item border-right">
+            <p class="stat-number">1000+</p>
+            <p class="stat-label">Texans served</p>
+            <p class="stat-desc">Blind and visually impaired Texans supported through ALB programs</p>
+          </li>
+          <li class="stat-item">
+            <p class="stat-number">94%</p>
+            <p class="stat-label">Job placement</p>
+            <p class="stat-desc">Career program graduates who find employment within 6 months</p>
+          </li>
+          <li class="stat-item border-right">
+            <p class="stat-number">200+</p>
+            <p class="stat-label">Employees</p>
+            <p class="stat-desc">People with vision loss currently employed at Austin Lighthouse</p>
+          </li>
+          <li class="stat-item">
+            <p class="stat-number">8,076</p>
+            <p class="stat-label">Training hours</p>
+            <p class="stat-desc">Hands-on instruction delivered through ALB's 25+ programs annually</p>
+          </li>
+          </ul>
         </div>
       </div>
     </section>
@@ -245,7 +245,7 @@
       <form class="signup-card" aria-label="Mailing list signup">
         <div class="form-field">
           <label for="email-input">Email address</label>
-          <input type="email" id="email-input" name="email" placeholder="example@email.com" autocomplete="email">
+          <input type="email" id="email-input" name="email" placeholder="example@email.com" autocomplete="email" required aria-required="true">
         </div>
         <fieldset class="form-interests">
           <legend class="interest-legend">I'm interested in</legend>
@@ -361,7 +361,7 @@
         </div>
       </div>
 
-      <nav class="footer-nav" aria-label="Footer navigation">
+      <nav class="footer-nav" aria-label="Footer primary navigation">
         <ul>
           <li><a href="#">Our services</a></li>
           <li><a href="#">Shop our store</a></li>
@@ -370,7 +370,7 @@
         </ul>
       </nav>
 
-      <nav class="footer-nav-secondary" aria-label="Footer navigation">
+      <nav class="footer-nav-secondary" aria-label="Footer secondary navigation">
         <ul class="footer-nav-top">
           <li><a href="#">Austin Lighthouse Blog</a></li>
           <li><a href="#">For Employees</a></li>
@@ -453,11 +453,13 @@
   <script>
     /* Mobile nav — main menu + Our services sub-panel */
     (function () {
-      var menuBtn     = document.querySelector('.mobile-menu-btn');
-      var overlay     = document.querySelector('.mobile-nav-overlay');
-      var closeBtn    = document.querySelector('.mobile-nav-close');
-      var servicesBtn = document.querySelector('.mobile-nav-services-btn');
-      var backBtn     = document.querySelector('.mobile-nav-back');
+      var menuBtn       = document.querySelector('.mobile-menu-btn');
+      var overlay       = document.querySelector('.mobile-nav-overlay');
+      var closeBtn      = document.querySelector('.mobile-nav-close');
+      var servicesBtn   = document.querySelector('.mobile-nav-services-btn');
+      var backBtn       = document.querySelector('.mobile-nav-back');
+      var mainPanel     = document.getElementById('mobile-panel-main');
+      var servicesPanel = document.getElementById('mobile-panel-services');
       if (!menuBtn || !overlay) return;
 
       function closeMenu() {
@@ -467,16 +469,22 @@
         menuBtn.setAttribute('aria-label', 'Open navigation menu');
         if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
+        mainPanel.removeAttribute('inert');
+        servicesPanel.removeAttribute('inert');
       }
 
       function openSubPanel() {
         overlay.classList.add('is-sub-open');
+        mainPanel.setAttribute('inert', '');
+        servicesPanel.removeAttribute('inert');
         if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'true');
         if (backBtn) backBtn.focus();
       }
 
       function closeSubPanel() {
         overlay.classList.remove('is-sub-open');
+        servicesPanel.setAttribute('inert', '');
+        mainPanel.removeAttribute('inert');
         if (servicesBtn) {
           servicesBtn.setAttribute('aria-expanded', 'false');
           servicesBtn.focus();
@@ -489,7 +497,16 @@
         menuBtn.setAttribute('aria-expanded', String(isOpen));
         menuBtn.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
-        if (isOpen && closeBtn) closeBtn.focus();
+        if (isOpen) {
+          servicesPanel.setAttribute('inert', '');
+          mainPanel.removeAttribute('inert');
+          if (closeBtn) closeBtn.focus();
+        } else {
+          overlay.classList.remove('is-sub-open');
+          if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'false');
+          mainPanel.removeAttribute('inert');
+          servicesPanel.removeAttribute('inert');
+        }
       });
 
       if (closeBtn) {
@@ -509,6 +526,23 @@
           } else if (overlay.classList.contains('is-open')) {
             closeMenu();
             menuBtn.focus();
+          }
+          return;
+        }
+        if (e.key === 'Tab' && overlay.classList.contains('is-open')) {
+          var activePanel = overlay.classList.contains('is-sub-open') ? servicesPanel : mainPanel;
+          var focusable = Array.from(activePanel.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          )).filter(function (el) { return !el.hidden; });
+          if (focusable.length === 0) return;
+          var first = focusable[0];
+          var last  = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
           }
         }
       });
