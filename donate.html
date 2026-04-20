@@ -35,7 +35,7 @@
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
           <div class="nav-item has-dropdown">
             <button id="nav-first-item" type="button" class="nav-link" aria-expanded="false" aria-controls="services-dropdown">Our services</button>
-            <div id="services-dropdown" class="nav-dropdown" aria-label="Our services submenu">
+            <div id="services-dropdown" class="nav-dropdown" aria-hidden="true" aria-label="Our services submenu">
               <a href="#" class="dropdown-item">Career coaching and support</a>
               <a href="#" class="dropdown-item">Technology for everyday life</a>
               <a href="#" class="dropdown-item">Independent living</a>
@@ -509,17 +509,29 @@
   </script>
 
   <script>
-    /* Services dropdown — sync aria-expanded with hover/focus state */
+    /* Services dropdown — disclosure pattern */
     (function () {
       var items = document.querySelectorAll('.nav-item.has-dropdown');
       items.forEach(function (item) {
-        var trigger = item.querySelector('.nav-link');
-        function open()  { trigger.setAttribute('aria-expanded', 'true');  }
-        function close() { trigger.setAttribute('aria-expanded', 'false'); }
+        var trigger  = item.querySelector('.nav-link');
+        var dropdown = item.querySelector('.nav-dropdown');
+        function open()  {
+          trigger.setAttribute('aria-expanded', 'true');
+          if (dropdown) dropdown.setAttribute('aria-hidden', 'false');
+        }
+        function close() {
+          trigger.setAttribute('aria-expanded', 'false');
+          if (dropdown) dropdown.setAttribute('aria-hidden', 'true');
+        }
         item.addEventListener('mouseenter', open);
         item.addEventListener('mouseleave', close);
-        item.addEventListener('focusin',    open);
-        item.addEventListener('focusout',   function (e) {
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.getAttribute('aria-expanded') === 'true' ? close() : open();
+          }
+        });
+        item.addEventListener('focusout', function (e) {
           if (!item.contains(e.relatedTarget)) close();
         });
         item.addEventListener('keydown', function (e) {

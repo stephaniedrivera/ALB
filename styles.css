@@ -293,9 +293,9 @@ fieldset {
   transition: opacity 0.18s ease, visibility 0.18s ease, transform 0.18s ease;
 }
 
-/* Show on hover or keyboard focus-within */
+/* Show on hover (mouse) or when button is explicitly expanded (keyboard) */
 .nav-item:hover .nav-dropdown,
-.nav-item:focus-within .nav-dropdown {
+.nav-link[aria-expanded="true"] ~ .nav-dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
