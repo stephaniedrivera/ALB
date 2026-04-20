@@ -11,6 +11,41 @@
 </head>
 <body>
 
+<!--
+  ═══════════════════════════════════════════════════════════════
+  ACCESSIBILITY REFERENCE — index.html
+  For developers using screen readers or building on this page.
+  ═══════════════════════════════════════════════════════════════
+
+  LANDMARK STRUCTURE (screen reader navigation map)
+    nav          "Skip links"
+    banner       (header)
+      nav        "Utility navigation"
+      nav        "Main navigation"
+    main         #content
+      region     "Empowering the blind and visually impaired in Austin"   h1
+      region     "Our Impact"                                              h2
+      region     "We provide jobs, training, and community support"        h2
+      region     "Watch our story"                                         (no heading, label only)
+      region     "Testimonials"                                            (no heading, label only)
+      region     "Stay connected"                                          h2
+      region     "Our partners"                                            h2
+    contentinfo  (footer)  ← #colophon
+      nav        "Footer primary navigation"
+      nav        "Footer secondary navigation"
+
+  HEADING HIERARCHY
+    h1  Empowering the blind and visually impaired in Austin
+    h2  More than 90 years of changing lives in Texas
+    h2  We provide jobs, training, and community support
+      h3  Life Skills Training
+      h3  Career Services
+      h3  Corporate Partnership
+    h2  Hear directly from the people we serve
+    h2  Join our mailing list
+    h2  Austin Lighthouse for the Blind is proud to partner with these companies
+-->
+
   <!-- Skip navigation (visible on keyboard focus) -->
   <nav aria-label="Skip links" class="skip-links">
     <ul>
@@ -73,6 +108,7 @@
   </header>
 
   <!-- ===================== MAIN CONTENT ===================== -->
+  <!-- tabindex="-1" lets the "Skip to main content" link move focus here programmatically without putting main in the tab order -->
   <main id="content" tabindex="-1">
 
     <!-- HERO -->
@@ -97,7 +133,8 @@
     <section class="section-impact" aria-label="Our Impact">
       <div class="impact-copy">
         <div class="impact-copy-inner">
-          <p class="eyebrow" aria-hidden="true">OUR IMPACT</p>
+          <!-- aria-hidden: decorative uppercase label; the h2 below is the real heading and makes this redundant -->
+        <p class="eyebrow" aria-hidden="true">OUR IMPACT</p>
           <h2 id="impact-heading">More than 90 years of <span class="gold">changing lives</span> in Texas</h2>
           <p>We measure our success in the independence, careers, and confidence of the people we serve.</p>
         </div>
@@ -179,6 +216,7 @@
     <section class="section-video" aria-label="Watch our story">
       <div class="video-media">
         <div class="video-wrapper">
+          <!-- Skip link inside the section lets keyboard and screen reader users bypass the iframe entirely -->
           <a class="skip-link" href="#post-video">Skip past video</a>
           <iframe
             src="https://www.youtube-nocookie.com/embed/WLQHauS5P_Q?cc_load_policy=1"
@@ -192,7 +230,8 @@
       </div>
       <div class="video-copy">
         <div class="video-copy-inner">
-          <p class="eyebrow" aria-hidden="true">WATCH OUR STORY</p>
+          <!-- aria-hidden: decorative uppercase label; the h2 below is the real heading and makes this redundant -->
+        <p class="eyebrow" aria-hidden="true">WATCH OUR STORY</p>
           <h2 id="video-heading">Hear directly from the people <span class="gold">we serve</span></h2>
           <p>Watch how blind and visually impaired people are building independence with Austin Lighthouse for the Blind.</p>
         </div>
@@ -200,6 +239,7 @@
     </section>
 
     <!-- TESTIMONIALS -->
+    <!-- tabindex="-1" makes this the landing target for the "Skip past video" link above -->
     <section id="post-video" tabindex="-1" class="section-testimonials" aria-label="Testimonials">
 
       <article class="testimonial testimonial-left">
@@ -239,6 +279,7 @@
     <!-- NEWSLETTER -->
     <section class="section-newsletter" aria-label="Stay connected">
       <div class="newsletter-copy">
+        <!-- aria-hidden: decorative uppercase label; the h2 below is the real heading and makes this redundant -->
         <p class="eyebrow" aria-hidden="true">STAY CONNECTED</p>
         <h2 id="newsletter-heading">Join our mailing list</h2>
         <p>Sign up to hear what's new, from program updates to upcoming events.</p>
@@ -296,7 +337,7 @@
                   <img src="images/logos/logo_Paycom.png" alt="Paycom">
                 </li>
               </ul>
-              <!-- Duplicate list — hidden from screen readers, creates seamless loop -->
+              <!-- Duplicate list — aria-hidden="true" hides it from screen readers so logos aren't announced twice; the CSS animation creates a seamless visual loop -->
               <ul class="ticker-list" aria-hidden="true">
                 <li class="partner-logo">
                   <img src="images/logos/logo_NIB.png" alt="">
@@ -335,6 +376,7 @@
   </main><!-- end #content -->
 
   <!-- ===================== FOOTER ===================== -->
+  <!-- tabindex="-1" lets the "Skip to footer" link move focus here programmatically without putting footer in the tab order -->
   <footer id="colophon" tabindex="-1" class="footer">
     <div class="footer-inner">
 
@@ -343,6 +385,7 @@
           <img src="images/logos/logo_Square.png" alt="" class="footer-logo">
         </a>
         <address>
+          <!-- aria-label spells out abbreviations so screen readers don't mispronounce "Rd" and "TX" -->
           <p class="footer-address" aria-label="4512 S Pleasant Valley Road, Austin, Texas 78744">4512 S Pleasant Valley Rd<br>Austin, TX 78744</p>
           <div class="contact-item">
             <img src="images/icons/icon_Phone.svg" alt="" width="24" height="24">
@@ -387,6 +430,8 @@
   </footer>
 
   <!-- ===================== MOBILE NAV OVERLAY ===================== -->
+  <!-- role="dialog" + aria-modal signals a modal context to screen readers; JS uses `inert` on inactive panels
+       because aria-modal's virtual cursor trapping is inconsistently supported across screen readers -->
   <div class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobile-nav-track">
 
@@ -476,10 +521,10 @@
 
       function openSubPanel() {
         overlay.classList.add('is-sub-open');
-        mainPanel.setAttribute('inert', '');
+        mainPanel.setAttribute('inert', ''); // inert removes the main panel from the accessibility tree so SR users can't reach it while the sub-panel is open
         servicesPanel.removeAttribute('inert');
         if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'true');
-        if (backBtn) backBtn.focus();
+        if (backBtn) backBtn.focus(); // move focus into the sub-panel so SR users land inside it, not behind it
       }
 
       function closeSubPanel() {
@@ -488,7 +533,7 @@
         mainPanel.removeAttribute('inert');
         if (servicesBtn) {
           servicesBtn.setAttribute('aria-expanded', 'false');
-          servicesBtn.focus();
+          servicesBtn.focus(); // return focus to the trigger that opened the sub-panel — standard disclosure pattern
         }
       }
 
@@ -501,7 +546,7 @@
         if (isOpen) {
           servicesPanel.setAttribute('inert', '');
           mainPanel.removeAttribute('inert');
-          if (closeBtn) closeBtn.focus();
+          if (closeBtn) closeBtn.focus(); // move focus into the dialog immediately so SR users land inside it, not behind it
         } else {
           overlay.classList.remove('is-sub-open');
           if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'false');
@@ -513,7 +558,7 @@
       if (closeBtn) {
         closeBtn.addEventListener('click', function () {
           closeMenu();
-          menuBtn.focus();
+          menuBtn.focus(); // return focus to the hamburger button that triggered the menu
         });
       }
 
@@ -530,6 +575,7 @@
           }
           return;
         }
+        // Manually trap Tab within the active panel — aria-modal alone doesn't reliably contain the virtual cursor across all screen readers
         if (e.key === 'Tab' && overlay.classList.contains('is-open')) {
           var activePanel = overlay.classList.contains('is-sub-open') ? servicesPanel : mainPanel;
           var focusable = Array.from(activePanel.querySelectorAll(
@@ -573,6 +619,7 @@
             trigger.getAttribute('aria-expanded') === 'true' ? close() : open();
           }
         });
+        // Close when focus leaves the entire nav item, not just the trigger — lets keyboard users tab through dropdown items without closing it prematurely
         item.addEventListener('focusout', function (e) {
           if (!item.contains(e.relatedTarget)) close();
         });
@@ -593,6 +640,7 @@
         var paused = track.classList.toggle('is-paused');
         btn.classList.toggle('is-paused', paused);
         btn.setAttribute('aria-pressed', paused);
+        // Label reflects the next action ("Play"/"Pause"), not the current state — standard convention for toggle buttons alongside aria-pressed
         btn.setAttribute('aria-label', paused ? 'Play partner logos' : 'Pause partner logos');
       });
     })();
