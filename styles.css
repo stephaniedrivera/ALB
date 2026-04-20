@@ -1877,7 +1877,7 @@ button.mobile-nav-link {
 
   /* --- IMPACT --- */
   .section-impact {
-    /*flex-direction: column;*/
+    flex-direction: column;
   }
 
   .impact-copy {
@@ -1902,22 +1902,6 @@ button.mobile-nav-link {
   /* --- DONATE PAGE --- */
   .employee-match-card {
     padding: 32px 80px;
-  }
-
-  /* --- NEWSLETTER --- */
-  .section-newsletter {
-    flex-direction: column;
-    gap: 48px;
-    padding: 80px 40px;
-  }
-
-  .newsletter-copy {
-    max-width: 100%;
-  }
-
-  .signup-card {
-    max-width: 560px;
-    width: 100%;
   }
 }
 
@@ -2174,7 +2158,7 @@ button.mobile-nav-link {
 
   /* Right-side testimonial: keep photo on top, quote below */
   .testimonial-right {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .testimonial-photo {
@@ -2191,7 +2175,7 @@ button.mobile-nav-link {
     flex-direction: column;
     gap: 40px;
     padding: 64px 16px;
-    align-items: stretch;
+    align-items: center;
   }
 
   .newsletter-copy {
