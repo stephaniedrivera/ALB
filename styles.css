@@ -145,12 +145,8 @@ fieldset {
   text-align: center;
   min-width: 240px;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
-}
-
-.btn:hover {
-  opacity: 0.88;
 }
 
 .btn-contact {
@@ -159,10 +155,26 @@ fieldset {
   color: var(--navy-900);
 }
 
+/* dark text on light bg → dark bg, white text */
+.btn-contact:hover,
+.btn-contact:focus-visible {
+  background-color: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
 .btn-donate {
   background-color: var(--red-700);
   border-color: var(--red-300);
   color: var(--white);
+}
+
+/* red primary → white tertiary with red text */
+.btn-donate:hover,
+.btn-donate:focus-visible {
+  background-color: var(--white);
+  border-color: var(--red-700);
+  color: var(--red-700);
 }
 
 .btn-outline {
@@ -171,6 +183,14 @@ fieldset {
   color: var(--navy-700);
   min-width: 0;
   width: 100%;
+}
+
+/* white tertiary → light blue secondary with dark navy text */
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background-color: var(--navy-100);
+  border-color: var(--navy-300);
+  color: var(--navy-900);
 }
 
 /* ============================================================
@@ -248,15 +268,20 @@ fieldset {
   font-size: 30px;
   color: var(--navy-900);
   white-space: nowrap;
-  transition: color 0.2s;
+  transition: color 0.2s, background-color 0.2s;
   background: none;
   border: none;
   cursor: pointer;
   text-decoration: none;
+  border-radius: 6px;
 }
 
-.nav-link:hover {
-  color: var(--navy-700);
+/* dark text on light bg → dark bg, white text */
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--white);
+  background-color: var(--navy-900);
+  outline: none;
 }
 
 /* ============================================================
@@ -309,17 +334,19 @@ fieldset {
   line-height: 1;
   color: var(--navy-900);
   text-decoration: none;
-  transition: color 0.15s;
+  transition: color 0.15s, background-color 0.15s;
+  padding: 8px 12px;
+  margin: -8px -12px;
+  border-radius: 6px;
 }
 
-.dropdown-item:hover {
-  color: var(--navy-700);
-}
-
+/* dark text on white bg → dark bg, white text */
+.dropdown-item:hover,
 .dropdown-item:focus-visible {
+  color: var(--white);
+  background-color: var(--navy-900);
   outline: 3px solid var(--gold);
   outline-offset: 4px;
-  border-radius: 2px;
 }
 
 /* Logo overlaps the nav */
@@ -1190,10 +1217,15 @@ fieldset {
   font-size: 20px;
   text-decoration: none;
   white-space: nowrap;
+  transition: color 0.2s;
 }
 
-.mobile-nav-link:hover {
-  opacity: 0.85;
+/* white text on blue bg → gold on hover */
+.mobile-nav-link:hover,
+.mobile-nav-link:focus-visible {
+  color: var(--gold);
+  opacity: 1;
+  outline: none;
 }
 
 .mobile-nav-link:focus-visible {
@@ -1228,6 +1260,7 @@ fieldset {
   text-decoration: none;
   text-align: center;
   box-sizing: border-box;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .mobile-btn-contact {
@@ -1236,10 +1269,26 @@ fieldset {
   color: var(--navy-900);
 }
 
+/* dark text on light bg → dark bg, white text */
+.mobile-btn-contact:hover,
+.mobile-btn-contact:focus-visible {
+  background-color: var(--navy-900);
+  border-color: var(--navy-900);
+  color: var(--white);
+}
+
 .mobile-btn-donate {
   background-color: var(--red-700);
   border-color: var(--red-300);
   color: var(--white);
+}
+
+/* red primary → white tertiary with red text */
+.mobile-btn-donate:hover,
+.mobile-btn-donate:focus-visible {
+  background-color: var(--white);
+  border-color: var(--red-700);
+  color: var(--red-700);
 }
 
 /* Social icon row — anchored to the bottom */
@@ -1303,8 +1352,12 @@ button.mobile-nav-link {
   text-decoration: none;
 }
 
-.mobile-nav-back:hover {
-  opacity: 0.85;
+/* white text on blue bg → gold on hover */
+.mobile-nav-back:hover,
+.mobile-nav-back:focus-visible {
+  color: var(--gold);
+  opacity: 1;
+  outline: none;
 }
 
 .mobile-nav-back:focus-visible {
@@ -1381,15 +1434,17 @@ button.mobile-nav-link {
   font-size: 18px;
   line-height: 1.4;
   color: var(--white);
-  transition: opacity 0.2s;
+  transition: color 0.2s;
 }
 
 .contact-item a[href^="mailto"] {
   text-decoration: underline;
 }
 
-.contact-item a:hover {
-  opacity: 0.8;
+/* white text on blue bg → gold on hover */
+.contact-item a:hover,
+.contact-item a:focus-visible {
+  color: var(--gold);
 }
 
 .social-links {
@@ -1446,13 +1501,17 @@ button.mobile-nav-link {
   line-height: normal;
   color: var(--white);
   display: block;
-  transition: opacity 0.2s;
+  transition: color 0.2s;
 }
 
+/* white text on blue bg → gold on hover */
 .footer-nav a:hover,
 .footer-nav-top a:hover,
-.footer-nav-bottom a:hover {
-  opacity: 0.8;
+.footer-nav-bottom a:hover,
+.footer-nav a:focus-visible,
+.footer-nav-top a:focus-visible,
+.footer-nav-bottom a:focus-visible {
+  color: var(--gold);
 }
 
 /* Secondary footer nav */
@@ -1798,122 +1857,6 @@ button.mobile-nav-link {
   color: var(--ink);
   text-align: center;
 }
-
-/* ============================================================
-   RESPONSIVE — WIDE DESKTOP (min-width: 1441px)
-   At viewports wider than the content-max, the hero goes
-   full-bleed (matching the nav pattern). The text gets the
-   same max() left padding as the nav. The decorative visual
-   is centered using the same offset formula, so the text-to-
-   photo spacing is preserved exactly from the 1440px design.
-   ============================================================ 
-@media (min-width: 1441px) {
-  .section-hero {
-    max-width: none;
-    margin: 0;
-    padding-left: max(40px, calc((100% - var(--content-max)) / 2 + 40px));
-  }
-
-  .hero-visual {
-    inset: auto;
-    top: 0;
-    bottom: 0;
-    left: calc((100% - var(--content-max)) / 2);
-    width: var(--content-max);
-    transform: none;
-  }
-}
-
-/* At 1780px+ the large ellipse is fully contained within the viewport,
-   so we lift overflow: hidden and let the decorative elements breathe. 
-@media (min-width: 1780px) {
-  .section-hero {
-    overflow: visible;
-  }
-}
-
-/* ============================================================
-   RESPONSIVE — TABLET (max-width: 1824px)
-   ============================================================ 
-@media (max-width: 1824px) {
-
-  /* --- HEADER --- 
-  .header-nav {
-    height: 160px;
-  }
-
-  .header-logo {
-    width: 280px;
-    height: 128px;
-  }
-
-  .top-nav {
-    gap: 20px;
-    padding: 12px 24px;
-  }
-
-  .global-nav {
-    gap: 8px;
-    padding: 12px 24px 12px 0;
-  }
-
-  .nav-link {
-    font-size: 22px;
-    height: 56px;
-    padding: 0 10px;
-  }
-
-  .dropdown-item {
-    font-size: 22px;
-  }
-
-  .nav-dropdown {
-    padding: 24px 32px;
-    gap: 20px;
-  }
-
-  .btn-contact,
-  .btn-donate {
-    font-size: 22px;
-    padding: 12px 24px;
-    min-width: 0;
-  }
-
-  /* --- HERO --- 
-  .hero-content h1 {
-    font-size: 64px;
-    height: auto;
-  }
-
-  /* --- IMPACT --- 
-  .section-impact {
-    flex-direction: column;
-  }
-
-  .impact-copy {
-    padding: 48px 40px;
-  }
-
-  .impact-stats {
-    padding: 48px 40px;
-  }
-
-  /* --- VIDEO --- 
-  .section-video {
-    flex-direction: column;
-  }
-
-  .video-copy {
-    flex: none;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* --- DONATE PAGE --- 
-  .employee-match-card {
-    padding: 32px 80px;
-  }
-}*/
 
 /* ============================================================
    RESPONSIVE — NARROW (max-width: 960px)

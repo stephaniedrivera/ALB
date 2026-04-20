@@ -11,6 +11,45 @@
 </head>
 <body>
 
+<!--
+  ═══════════════════════════════════════════════════════════════
+  ACCESSIBILITY REFERENCE — donate.html
+  For developers using screen readers or building on this page.
+  ═══════════════════════════════════════════════════════════════
+
+  LANDMARK STRUCTURE (screen reader navigation map)
+    nav          "Skip links"
+    banner       (header)
+      nav        "Utility navigation"
+      nav        "Main navigation"
+    main         #content
+      region     "Help Us Light the Way"               h1
+      region     "Donation impact"                     h2
+      region     "Donate"                              h2  ← #donation-form
+        group    "Preset donation amounts"             (toggle buttons, aria-pressed)
+        group    "Donation type"                       (toggle buttons, aria-pressed)
+      region     "Your donation could be matched"      h2
+      region     "Other Ways to Give"                  h2
+                   h3  Planned Giving
+                   h3  Events & In-Kind Support
+                   h3  Donate a Vehicle
+      region     "Stay connected"                      h2
+    contentinfo  (footer)  ← #colophon
+      nav        "Footer primary navigation"
+      nav        "Footer secondary navigation"
+
+  HEADING HIERARCHY
+    h1  Help Us Light the Way
+    h2  Every donation, partnership and purchase helps us create jobs, access & opportunity.
+    h2  Donate
+    h2  Your donation could be matched
+    h2  Other Ways to Give
+      h3  Planned Giving
+      h3  Events & In-Kind Support
+      h3  Donate a Vehicle
+    h2  Join our mailing list
+-->
+
   <!-- Skip navigation (visible on keyboard focus) -->
   <nav aria-label="Skip links" class="skip-links">
     <ul>
@@ -30,6 +69,7 @@
             <img src="images/icons/icon_Search.svg" alt="" width="37" height="37">
           </button>
           <a href="#" class="btn btn-contact">Contact us</a>
+          <!-- aria-current="page" tells screen readers this is the active page in the nav -->
           <a href="donate.html" class="btn btn-donate" aria-current="page">Donate</a>
         </nav>
         <nav id="site-navigation" class="global-nav" aria-label="Main navigation">
@@ -75,6 +115,7 @@
   </header>
 
   <!-- ===================== MAIN CONTENT ===================== -->
+  <!-- tabindex="-1" lets the "Skip to main content" link move focus here programmatically without putting main in the tab order -->
   <main id="content" tabindex="-1">
 
     <!-- HERO — same visual structure as homepage -->
@@ -99,26 +140,31 @@
     <section class="section-impact" aria-label="Donation impact">
       <div class="impact-copy">
         <div class="impact-copy-inner">
-          <p class="eyebrow" aria-hidden="true">YOUR IMPACT</p>
+          <!-- aria-hidden: decorative uppercase label; the h2 below is the real heading and makes this redundant -->
+      <p class="eyebrow" aria-hidden="true">YOUR IMPACT</p>
           <h2>Every donation, partnership and purchase helps us create <span class="gold">jobs</span>, <span class="gold">access</span> &amp; <span class="gold">opportunity</span>.</h2>
         </div>
       </div>
     </section>
 
     <!-- DONATION FORM -->
+    <!-- tabindex="-1" lets the "Skip to donation form" link move focus here; aria-labelledby names this region using the h2 below -->
     <section class="section-donate-form" id="donation-form" tabindex="-1" aria-labelledby="donate-form-heading">
       <h2 id="donate-form-heading" class="donate-section-title">Donate</h2>
 
+      <!-- novalidate suppresses browser-native validation popups; if adding custom validation, set aria-invalid="true" and aria-describedby pointing to an inline error message on each field -->
       <form class="donation-form" action="#" method="post" novalidate>
 
         <!-- ── STEP 1: CHOOSE AMOUNT ── -->
         <div class="donation-step">
           <div class="step-sidebar">
+            <!-- aria-hidden: step numbers are decorative; step identity is conveyed by the fieldset legend below -->
             <span class="step-number" aria-hidden="true">1</span>
           </div>
           <fieldset class="step-content">
             <legend class="step-title">Choose Your Amount</legend>
             <p class="step-subtitle">Select your donation amount.</p>
+            <!-- role="group" + aria-label gives the button cluster a named group without a fieldset; aria-pressed turns each into a toggle button (JS ensures only one is true at a time) -->
             <div class="amount-grid" role="group" aria-label="Preset donation amounts">
               <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $10 donation, you will help provide assistive technology resources for someone in need.">$10</button>
               <button type="button" class="amount-btn is-selected" aria-pressed="true" data-impact="With a $25 donation, you will help supply training materials for individuals learning new skills.">$25</button>
@@ -129,6 +175,7 @@
               <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $1,000 donation, you will make a lasting impact by supporting long-term programs and services.">$1,000</button>
               <button type="button" class="amount-btn" aria-pressed="false" data-impact="Your custom donation will help expand access to life-changing programs and services.">Other</button>
             </div>
+            <!-- aria-live="polite" announces the updated impact message when a new amount is selected, without interrupting what the screen reader is currently reading -->
             <div class="step-info" id="amount-info" aria-live="polite">
               With a $25 donation, you will help supply training materials for individuals learning new skills.
             </div>
@@ -293,6 +340,7 @@
   </main><!-- end #content -->
 
 <!-- ===================== FOOTER ===================== -->
+  <!-- tabindex="-1" lets the "Skip to footer" link move focus here programmatically without putting footer in the tab order -->
   <footer id="colophon" tabindex="-1" class="footer">
     <div class="footer-inner">
 
@@ -301,6 +349,7 @@
           <img src="images/logos/logo_Square.png" alt="" class="footer-logo">
         </a>
         <address>
+          <!-- aria-label spells out abbreviations so screen readers don't mispronounce "Rd" and "TX" -->
           <p class="footer-address" aria-label="4512 S Pleasant Valley Road, Austin, Texas 78744">4512 S Pleasant Valley Rd<br>Austin, TX 78744</p>
           <div class="contact-item">
             <img src="images/icons/icon_Phone.svg" alt="" width="24" height="24">
@@ -345,6 +394,8 @@
   </footer>
 
   <!-- ===================== MOBILE NAV OVERLAY ===================== -->
+  <!-- role="dialog" + aria-modal signals a modal context to screen readers; JS uses `inert` on inactive panels
+       because aria-modal's virtual cursor trapping is inconsistently supported across screen readers -->
   <div class="mobile-nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <div class="mobile-nav-track">
 
@@ -434,10 +485,10 @@
 
       function openSubPanel() {
         overlay.classList.add('is-sub-open');
-        mainPanel.setAttribute('inert', '');
+        mainPanel.setAttribute('inert', ''); // inert removes the main panel from the accessibility tree so SR users can't reach it while the sub-panel is open
         servicesPanel.removeAttribute('inert');
         if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'true');
-        if (backBtn) backBtn.focus();
+        if (backBtn) backBtn.focus(); // move focus into the sub-panel so SR users land inside it, not behind it
       }
 
       function closeSubPanel() {
@@ -446,7 +497,7 @@
         mainPanel.removeAttribute('inert');
         if (servicesBtn) {
           servicesBtn.setAttribute('aria-expanded', 'false');
-          servicesBtn.focus();
+          servicesBtn.focus(); // return focus to the trigger that opened the sub-panel — standard disclosure pattern
         }
       }
 
@@ -459,7 +510,7 @@
         if (isOpen) {
           servicesPanel.setAttribute('inert', '');
           mainPanel.removeAttribute('inert');
-          if (closeBtn) closeBtn.focus();
+          if (closeBtn) closeBtn.focus(); // move focus into the dialog immediately so SR users land inside it, not behind it
         } else {
           overlay.classList.remove('is-sub-open');
           if (servicesBtn) servicesBtn.setAttribute('aria-expanded', 'false');
@@ -471,7 +522,7 @@
       if (closeBtn) {
         closeBtn.addEventListener('click', function () {
           closeMenu();
-          menuBtn.focus();
+          menuBtn.focus(); // return focus to the hamburger button that triggered the menu
         });
       }
 
@@ -488,6 +539,7 @@
           }
           return;
         }
+        // Manually trap Tab within the active panel — aria-modal alone doesn't reliably contain the virtual cursor across all screen readers
         if (e.key === 'Tab' && overlay.classList.contains('is-open')) {
           var activePanel = overlay.classList.contains('is-sub-open') ? servicesPanel : mainPanel;
           var focusable = Array.from(activePanel.querySelectorAll(
@@ -531,6 +583,7 @@
             trigger.getAttribute('aria-expanded') === 'true' ? close() : open();
           }
         });
+        // Close when focus leaves the entire nav item, not just the trigger — lets keyboard users tab through dropdown items without closing it prematurely
         item.addEventListener('focusout', function (e) {
           if (!item.contains(e.relatedTarget)) close();
         });
@@ -549,6 +602,7 @@
         var buttons = container.querySelectorAll('.amount-btn');
         buttons.forEach(function (btn) {
           btn.addEventListener('click', function () {
+            // Reset all buttons first — ensures only one aria-pressed="true" exists at a time
             buttons.forEach(function (b) {
               b.classList.remove('is-selected');
               b.setAttribute('aria-pressed', 'false');
@@ -558,7 +612,7 @@
             if (infoEl) {
               var impact = btn.dataset.impact || '';
               infoEl.textContent = impact;
-              infoEl.hidden = !impact;
+              infoEl.hidden = !impact; // hide rather than empty — prevents the live region from announcing an empty string
             }
           });
         });
