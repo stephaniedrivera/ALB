@@ -351,11 +351,16 @@ fieldset {
   margin: 0 auto;
 }
 
-/* Decorative visual layer */
+/* Decorative visual layer — fixed at design dimensions, scaled from top-right */
 .hero-visual {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  width: 1440px;
+  height: 782px;
   pointer-events: none;
+  transform-origin: top right;
+  transform: scale(tan(atan2(100vw, 1440px)));
 }
 
 .hero-ellipse-large {
@@ -376,33 +381,27 @@ fieldset {
   background: url('images/decorative/hero_ellipse_small.svg') center / cover no-repeat;
 }
 
-/* Photo clipped to ellipse mask */
+/* Photo clipped to ellipse mask — container matches the mask's natural 686×642 dimensions */
 .hero-photo-mask {
   position: absolute;
-  left: auto;
-  right: -195px;
-  top: 27px;
-  width: 1093px;
-  height: 728px;
+  left: 746px;
+  top: 70px;
+  width: 686px;
+  height: 642px;
   -webkit-mask-image: url('images/decorative/hero_mask.svg');
   mask-image: url('images/decorative/hero_mask.svg');
-  -webkit-mask-size: 686px 642px;
-  mask-size: 686px 642px;
-  -webkit-mask-position: 204px 43px;
-  mask-position: 204px 43px;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  overflow: hidden;
 }
 
 .hero-photo-mask img {
-  position: absolute;
-  width: 108.26%;
-  height: 91.49%;
-  top: 4.11%;
-  left: -11.64%;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  max-width: none;
+  object-position: center;
 }
 
 /* Text content */
@@ -565,7 +564,8 @@ fieldset {
   text-align: center;
 }
 
-.cards-grid {
+.cards-grid,
+.other-ways-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
@@ -1789,12 +1789,6 @@ button.mobile-nav-link {
   text-align: center;
 }
 
-.other-ways-grid {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-}
-
 /* ============================================================
    RESPONSIVE — WIDE DESKTOP (min-width: 1441px)
    At viewports wider than the content-max, the hero goes
@@ -1816,6 +1810,7 @@ button.mobile-nav-link {
     bottom: 0;
     left: calc((100% - var(--content-max)) / 2);
     width: var(--content-max);
+    transform: none;
   }
 }
 
@@ -1893,12 +1888,6 @@ button.mobile-nav-link {
     padding: 48px 40px;
   }
 
-  /* --- CARDS --- */
-  .other-ways-grid .stat-card {
-    flex: 0 0 calc(33.33% - 16px);
-    max-width: none;
-  }
-
   /* --- VIDEO --- */
   .section-video {
     flex-direction: column;
@@ -1911,10 +1900,6 @@ button.mobile-nav-link {
   }
 
   /* --- DONATE PAGE --- */
-  .other-ways-grid {
-    flex-wrap: wrap;
-  }
-
   .employee-match-card {
     padding: 32px 80px;
   }
@@ -1938,11 +1923,12 @@ button.mobile-nav-link {
 
 /* ============================================================
    RESPONSIVE — NARROW (max-width: 960px)
-   Below this width, 3 card columns become too cramped for the
-   content — drop to a single stacked column.
+   Below this width 3 card columns become too cramped — collapse
+   both grids to a single stacked column.
    ============================================================ */
 @media (max-width: 960px) {
-  .cards-grid {
+  .cards-grid,
+  .other-ways-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -2160,10 +2146,6 @@ button.mobile-nav-link {
     font-size: 32px;
   }
 
-  .btn-outline {
-    min-width: 0;
-  }
-
   /* --- VIDEO --- */
   .section-video {
     flex-direction: column;
@@ -2301,11 +2283,6 @@ button.mobile-nav-link {
 
   .other-ways-inner > h2 {
     font-size: 40px;
-  }
-
-  .other-ways-grid {
-    flex-direction: column;
-    align-items: stretch;
   }
 
   /* --- PARTNERS --- */
