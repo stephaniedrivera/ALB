@@ -120,14 +120,14 @@
             <legend class="step-title">Choose Your Amount</legend>
             <p class="step-subtitle">Select your donation amount.</p>
             <div class="amount-grid" role="group" aria-label="Preset donation amounts">
-              <button type="button" class="amount-btn" aria-pressed="false">$10</button>
-              <button type="button" class="amount-btn is-selected" aria-pressed="true">$25</button>
-              <button type="button" class="amount-btn" aria-pressed="false">$50</button>
-              <button type="button" class="amount-btn" aria-pressed="false">$100</button>
-              <button type="button" class="amount-btn" aria-pressed="false">$250</button>
-              <button type="button" class="amount-btn" aria-pressed="false">$500</button>
-              <button type="button" class="amount-btn" aria-pressed="false">$1,000</button>
-              <button type="button" class="amount-btn" aria-pressed="false">Other</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $10 donation, you will help provide assistive technology resources for someone in need.">$10</button>
+              <button type="button" class="amount-btn is-selected" aria-pressed="true" data-impact="With a $25 donation, you will help supply training materials for individuals learning new skills.">$25</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $50 donation, you will support one day of job training services.">$50</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $100 donation, you will help fund assistive technology and accessibility tools.">$100</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $250 donation, you will contribute to specialized training programs that build independence.">$250</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $500 donation, you will help support employment opportunities for individuals with visual impairments.">$500</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="With a $1,000 donation, you will make a lasting impact by supporting long-term programs and services.">$1,000</button>
+              <button type="button" class="amount-btn" aria-pressed="false" data-impact="Your custom donation will help expand access to life-changing programs and services.">Other</button>
             </div>
             <div class="step-info" id="amount-info" aria-live="polite">
               With a $25 donation, you will help supply training materials for individuals learning new skills.
@@ -498,7 +498,7 @@
   <script>
     /* Toggle button groups — amount grid + donation type */
     (function () {
-      function makeToggleGroup(container) {
+      function makeToggleGroup(container, infoEl) {
         if (!container) return;
         var buttons = container.querySelectorAll('.amount-btn');
         buttons.forEach(function (btn) {
@@ -509,10 +509,15 @@
             });
             btn.classList.add('is-selected');
             btn.setAttribute('aria-pressed', 'true');
+            if (infoEl) {
+              var impact = btn.dataset.impact || '';
+              infoEl.textContent = impact;
+              infoEl.hidden = !impact;
+            }
           });
         });
       }
-      makeToggleGroup(document.querySelector('.amount-grid'));
+      makeToggleGroup(document.querySelector('.amount-grid'), document.getElementById('amount-info'));
       makeToggleGroup(document.querySelector('.donation-type-btns'));
     })();
   </script>
